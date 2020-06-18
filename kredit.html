@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AvtoSite</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./main-style.css" />
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <header class="b-header">
+      <div ref="headerLine" class="b-header__top">
+        <div class="b-header__container">
+          <div class="b-header__top-content">
+            <div class="b-header__addresses">
+              <div class="address-line">
+                <a class="address-line__item" href="#">
+                  <span class="address-line__icon icon">
+                    <img class="icon" src="./img/location.svg" alt="geo" />
+                  </span>
+                  <div class="address-line__text">Руставели 53</div>
+                </a>
+                <a class="address-line__item" href="#">
+                  <span class="address-line__icon"
+                    ><img class="icon" src="./img/location.svg" alt="geo"
+                  /></span>
+                  <div class="address-line__text">Торфяная дорога 8/3</div>
+                </a>
+                <a class="address-line__item" href="#">
+                  <span class="address-line__icon"
+                    ><img class="icon" src="./img/location.svg" alt="geo"
+                  /></span>
+                  <div class="address-line__text">пр. Непокоренных, д.47</div>
+                </a>
+
+                <!-- <a class="address-line__item" href="#">
+                  <div class="address-line__text">О компании</div>
+                </a> -->
+              </div>
+            </div>
+            <div class="b-header__callback">
+              <div id="callback" class="callback-button">
+                <span class="callback-button__icon">
+                  <img src="./img/phone1.svg" alt="callback" />
+                </span>
+                <div class="callback-button__text">Обратный звонок</div>
+              </div>
+              <a class="b-header__phone" href="tel:+78121111111">
+                +7 (812) 111-11-11
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="b-header__menu">
+        <div class="b-header__container">
+          <div class="b-header__menu-content">
+            <a class="b-header__logo-wrapper" href="index.html">
+              <img
+                class="b-header__logo"
+                src="https://st2.depositphotos.com/1768926/12401/v/950/depositphotos_124010434-stock-illustration-car-logo-auto-symbol-and.jpg"
+                alt="logo"
+              />
+            </a>
+
+            <nav class="b-header__nav">
+              <ul>
+                <li class="">
+                  <a href="#">Авто в наличии</a>
+                </li>
+                <li class="">
+                  <a href="vykup.html">Выкуп</a>
+                </li>
+                <li class="">
+                  <a href="kredit.html">Кредит</a>
+                </li>
+                <li class="">
+                  <a href="kontakty.html">Контакты</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <request-form ref="requestForm" agreement_link="#"></request-form>
+    </header>
+    <section class="m-header" style="padding: 0px;">
+      <div class="m-header__top-wrapper m-header__top-wrapper_return">
+        <div class="m-menu" style="display: none;">
+          <div class="m-menu__wrapper">
+            <div class="m-menu__content">
+              <div data-scroll-lock-scrollable="" class="m-menu__plague">
+                <nav class="m-menu__list">
+                  <ul class="m-menu__ul">
+                    <li class="m-menu__item">
+                      <a href="#" target="_self">Авто в наличии</a>
+                    </li>
+                    <li class="m-menu__item">
+                      <a href="#" target="_self">Выкуп</a>
+                    </li>
+                    <li class="m-menu__item">
+                      <a href="#" target="_self">Кредит</a>
+                    </li>
+                    <li class="m-menu__item">
+                      <a href="#" target="_self">Контакты</a>
+                    </li>
+                    
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="m-header__container">
+          <div class="m-header__top">
+            <a href="#" class="m-header__logo-wrapper"
+              ><img
+                src="#"
+                alt=""
+                class="m-header__logo"
+            /></a>
+            <div class="m-header__phone"><a href="tel:+7812777777">+7 (812) 777-77-77</a></div>
+            <div class="m-header__menu">
+              <div class="c-hamb" id="hamb"><span></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="m-header__nav">
+        <nav class="m-header__container">
+          <ul>
+            <li><a href="#">Авто в наличии</a></li>
+            <li><a href="#">Выкуп</a></li>
+            <li><a href="#">Кредит</a></li>
+            <li><a href="#">Контакты</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+    <main class="b-content">
+      <div class="container credit-page__container">
+        <div class="page-header clearfix">
+          <h3 class="section-title"><span>Заявка </span>на автокредит</h3>
+        </div>
+
+        <span id="creditForm-SuccessBlock" style="display: none;">
+          <i class="fa fw fa-check"></i>
+          Заявка отправлена
+        </span>
+        <form id="creditForm" class="bv-form" novalidate="novalidate">
+          <button
+            type="submit"
+            class="bv-hidden-submit"
+            style="display: none; width: 0px; height: 0px;"
+          ></button>
+          <input type="hidden" name="url" value="" />
+          <input type="hidden" name="make" value="" />
+          <input type="hidden" name="model" value="" />
+          <input type="hidden" name="year" value="" />
+          <script>
+            var SMART_CREDIT_FORM_SETTINGS = {
+              vehicleCreditFormAmountDefault: 1000000,
+              vehicleCreditFormPercentageOfDownPaymentMin: 0,
+              vehicleCreditFormPercentageOfDownPaymentMax: 80,
+              vehicleCreditFormPercentageOfDownPaymentDefault: 50,
+              vehicleCreditFormMonthsMin: 12,
+              vehicleCreditFormMonthsMax: 60,
+              vehicleCreditFormMonthsDefault: 60,
+              vehicleCreditFormInterestRate: 24,
+              vehiclePrice: 0
+            }
+
+            //---------------------------------------------------------------------
+            //--------------------- RECAPTCHA for CREDIT FORM PAGE ----------------
+            //---------------------------------------------------------------------
+
+            let flag_captcha = 0
+
+            window.onload = function () {
+              //---------------------------------------------------------------------
+              //RENDER OPTIONS
+              grecaptcha.render('g-recaptcha', {
+                sitekey: '6LdEsjkUAAAAAABV1_POmgt0l5XOOkeG49j_sgJo',
+                theme: 'light',
+                callback: 'verifyCallback'
+              })
+            }
+
+            //---------------------------------------------------------------------
+            //reCAPTCHA Callback Function
+            function verifyCallback(response) {
+              flag_captcha = response
+              var warning = document.querySelector('.credit-page__section__warnings--captcha')
+              warning.style.display = 'none'
+            }
+          </script>
+
+          <script
+            async=""
+            defer=""
+            src="https://www.google.com/recaptcha/api.js?render=explicit&amp;onload=verifyCallback&amp;hl=ru"
+          ></script>
+
+          <div class="credit-page__section-steps">
+            <h4 class="credit-page__section__title" data-section="vehicle">
+              <span class="credit-page__section__title__num complete">1</span>
+              <span class="credit-page__section__title__text">Информация об автомобиле</span>
+            </h4>
+            <span class="credit-page__section__line"></span>
+            <h4 class="credit-page__section__title" data-section="credit">
+              <span class="credit-page__section__title__num current">2</span>
+              <span class="credit-page__section__title__text">Информация о кредите</span>
+            </h4>
+            <span class="credit-page__section__line"></span>
+            <h4 class="credit-page__section__title" data-section="personal">
+              <span class="credit-page__section__title__num">3</span>
+              <span class="credit-page__section__title__text">Персональная информация</span>
+            </h4>
+          </div>
+
+          <div class="credit-page__section-content">
+            <input
+              id="filter-data"
+              type="hidden"
+              data-banner-data="[]"
+              data-filter-data='{"errors":[],"data":{"makes":[{"make_id":7,"name":"BMW","count":2,"models":["1M","X6"]},{"make_id":21,"name":"Ford","count":1,"models":["Transit"]},{"make_id":1030,"name":"LADA (\u0412\u0410\u0417)","count":1,"models":["Kalina"]},{"make_id":35,"name":"Lexus","count":5,"models":["ES","LX","RX"]},{"make_id":43,"name":"Mazda","count":1,"models":["CX-9"]},{"make_id":47,"name":"Nissan","count":4,"models":["Juke","Murano","Qashqai","X-Trail"]},{"make_id":66,"name":"Toyota","count":9,"models":["Auris","Camry","Highlander","Land Cruiser","Land Cruiser Prado","RAV4"]}],"gearboxes":{"6":"\u0410\u0432\u0442\u043e\u043c\u0430\u0442","273":"\u0410\u0432\u0442\u043e\u043c\u0430\u0442 \u0432\u0430\u0440\u0438\u0430\u0442\u043e\u0440","5":"\u041c\u0435\u0445\u0430\u043d\u0438\u0447\u0435\u0441\u043a\u0430\u044f"},"years":{"min":2002,"max":2020}}}'
+            />
+
+            <!-- step 1  -->
+            <section
+              data-section="vehicle"
+              class="credit-page__section credit-page__section__vehicle"
+            >
+              <section class="b-filter b-filter_home">
+                <div class="b-filter__container">
+                  <!-- Фильтр -->
+                  <div class="b-filter__wrapper">
+                    <div class="b-filter__row">
+                      <div class="b-filter__field">
+                        <div class="double-input">
+                          <div class="c-select">
+                            <input type="hidden" value="0" id="wpcci-make" name="filter[make]" />
+                            <div class="c-select__wrapper">
+                              <div class="c-select__field">
+                                <div class="c-select__value c-select__value_safety">
+                                  <span class="placeholder">Марка</span>
+                                  <span class="value"></span>
+                                </div>
+                              </div>
+                              <div class="c-select__control">
+                                <img src="./img/arrow-black-g.svg" alt=">" class="c-select__icon" />
+                              </div>
+                              <ul class="c-select__list">
+                                <li class="c-select__item c-select__item_reset">
+                                  Любая
+                                </li>
+                                <li class="c-select__item" style="">
+                                  Acura
+                                </li>
+                                <li class="c-select__item" style="">
+                                  Bmw
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+
+                          <div class="c-select disabled">
+                            <input type="hidden" value="0" id="wpcci-model" name="filter[model]" />
+                            <div class="c-select__wrapper">
+                              <div class="c-select__field">
+                                <div class="c-select__value c-select__value_safety">
+                                  <span class="placeholder">Модель</span>
+                                  <span class="value"></span>
+                                </div>
+                              </div>
+                              <div class="c-select__control">
+                                <img src="./img/arrow-black-g.svg" alt=">" class="c-select__icon" />
+                              </div>
+                              <ul class="c-select__list">
+                                <li class="c-select__item c-select__item_reset">
+                                  Любая
+                                </li>
+                                <li class="c-select__item" style="display: none;">
+                                  All
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="b-filter__field">
+                        <div class="double-input">
+                          <div class="c-select">
+                            <input
+                              type="hidden"
+                              value="0"
+                              id="wpcci-from-year"
+                              name="filter[from_year]"
+                            />
+                            <div class="c-select__wrapper">
+                              <div class="c-select__field">
+                                <div class="c-select__value c-select__value_safety">
+                                  <span class="placeholder">Год от</span>
+                                  <span class="value"></span>
+                                </div>
+                              </div>
+                              <div class="c-select__control">
+                                <img src="./img/arrow-black-g.svg" alt=">" class="c-select__icon" />
+                              </div>
+                              <ul class="c-select__list">
+                                <li class="c-select__item c-select__item_reset">
+                                  Любой
+                                </li>
+                                <li class="c-select__item" style="">
+                                  2020
+                                </li>
+                                <li class="c-select__item" style="">
+                                  2019
+                                </li>
+                                <li class="c-select__item">
+                                  2018
+                                </li>
+                                <li class="c-select__item">
+                                  2017
+                                </li>
+                                <li class="c-select__item">
+                                  2016
+                                </li>
+                                <li class="c-select__item">
+                                  2015
+                                </li>
+                                <li class="c-select__item">
+                                  2014
+                                </li>
+                                <li class="c-select__item">
+                                  2013
+                                </li>
+                                <li class="c-select__item">
+                                  2012
+                                </li>
+                                <li class="c-select__item">
+                                  2011
+                                </li>
+                                <li class="c-select__item">
+                                  2010
+                                </li>
+                                <li class="c-select__item">
+                                  2009
+                                </li>
+                                <li class="c-select__item">
+                                  2008
+                                </li>
+                                <li class="c-select__item">
+                                  2007
+                                </li>
+                                <li class="c-select__item">
+                                  2006
+                                </li>
+                                <li class="c-select__item">
+                                  2005
+                                </li>
+                                <li class="c-select__item">
+                                  2004
+                                </li>
+                                <li class="c-select__item">
+                                  2003
+                                </li>
+                                <li class="c-select__item">
+                                  2002
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+
+                          <div class="c-select">
+                            <input
+                              type="hidden"
+                              value="0"
+                              id="wpcci-to-year"
+                              name="filter[to_year]"
+                            />
+                            <div class="c-select__wrapper">
+                              <div class="c-select__field">
+                                <div class="c-select__value c-select__value_safety">
+                                  <span class="placeholder">до</span>
+                                  <span class="value"></span>
+                                </div>
+                              </div>
+                              <div class="c-select__control">
+                                <img src="./img/arrow-black-g.svg" alt=">" class="c-select__icon" />
+                              </div>
+                              <ul class="c-select__list">
+                                <li class="c-select__item c-select__item_reset">
+                                  Любой
+                                </li>
+                                <li class="c-select__item" style="">
+                                  2020
+                                </li>
+                                <li class="c-select__item" style="">
+                                  2019
+                                </li>
+                                <li class="c-select__item">
+                                  2018
+                                </li>
+                                <li class="c-select__item">
+                                  2017
+                                </li>
+                                <li class="c-select__item">
+                                  2016
+                                </li>
+                                <li class="c-select__item">
+                                  2015
+                                </li>
+                                <li class="c-select__item">
+                                  2014
+                                </li>
+                                <li class="c-select__item">
+                                  2013
+                                </li>
+                                <li class="c-select__item">
+                                  2012
+                                </li>
+                                <li class="c-select__item">
+                                  2011
+                                </li>
+                                <li class="c-select__item">
+                                  2010
+                                </li>
+                                <li class="c-select__item">
+                                  2009
+                                </li>
+                                <li class="c-select__item">
+                                  2008
+                                </li>
+                                <li class="c-select__item">
+                                  2007
+                                </li>
+                                <li class="c-select__item">
+                                  2006
+                                </li>
+                                <li class="c-select__item">
+                                  2005
+                                </li>
+                                <li class="c-select__item">
+                                  2004
+                                </li>
+                                <li class="c-select__item">
+                                  2003
+                                </li>
+                                <li class="c-select__item">
+                                  2002
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="b-filter__field">
+                        <div class="">
+                          <div class="c-select">
+                            <input
+                              type="hidden"
+                              value="0"
+                              id="wpcci-gearbox"
+                              name="filter[gearbox]"
+                            />
+                            <div class="c-select__wrapper">
+                              <div class="c-select__field">
+                                <div data-amount="" class="c-select__value">
+                                  <div class="c-select__value-wrapper">
+                                    <span class="placeholder">Тип КПП</span>
+                                    <span class="value"></span>
+                                  </div>
+                                </div>
+                                <div class="c-select__control">
+                                  <img
+                                    src="./img/arrow-black-g.svg"
+                                    alt=">"
+                                    class="c-select__icon"
+                                  />
+                                </div>
+                              </div>
+                              <ul class="c-select__list">
+                                <li
+                                  class="c-select__item c-select__item_reset c-select__item_selectable c-select__item_selectable_reset"
+                                >
+                                  Любой
+                                </li>
+                                <li class="c-select__item c-select__item_selectable">
+                                  Автомат
+                                </li>
+                                <li class="c-select__item c-select__item_selectable">
+                                  Вариатор
+                                </li>
+                                <li class="c-select__item c-select__item_selectable">
+                                  Механика
+                                </li>
+                                <li class="c-select__item c-select__item_selectable">
+                                  Робот
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="b-filter__field">
+                        <div class="double-input double-input_inseverable">
+                          <input
+                            type="text"
+                            id="wpcci-start-price"
+                            name="filter[price_from]"
+                            placeholder="Цена от, ₽"
+                            class="input-default filter__price"
+                          />
+                          <input
+                            type="text"
+                            id="wpcci-end-price"
+                            name="filter[price_to]"
+                            placeholder="до"
+                            class="input-default filter__price"
+                          />
+                        </div>
+                      </div>
+                      <div class="b-filter__field">
+                        <button
+                          class="btn b-filter__btn btn_accent btn-primary credit-page__section__filter-find"
+                        >
+                          Найти
+                        </button>
+                      </div>
+
+                      <div class="b-filter__field">
+                        <button
+                          class="btn b-filter__btn btn btn-warning credit-page__section__filter-clear"
+                        >
+                          Сбросить
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Список -->
+              <div class="credit-page__section__list">
+                <article
+                  class="credit-page__vehicle-card"
+                  data-vehicle='{"id_vehicle":8531594,"seller_id":3322,"make":{"key":"Марка","val":"Lexus"},"make_id":35,"model":{"key":"Модель","val":"LX"},"model_id":970,"modification":{"key":"Модификация","val":null},"modification_id":null,"price":{"key":"Цена","val":"4370000 руб"},"price_rur":4370000,"price_eur":55215.04,"price_usd":62078.27,"category":{"key":"Категория","val":"Внедорожник"},"body_type_id":3,"usage":{"key":"Тип","val":"подержанная"},"first_registration":{"key":"Год выпуска","val":2016},"cover":{"key":"Пробег","val":"113000 км"},"power":{"key":"Мощность","val":"272 Л.С. / 201 кВт"},"owners_number":{"key":"Число владельцев","val":1},"cubic_capacity":{"key":"Объем двиг.","val":4500},"drive":{"key":"Привод","val":"Полный"},"color":{"key":"Цвет кузова","val":"Серый"},"color_id":6,"doors":{"key":"Число дверей","val":5},"gearbox":{"key":"Коробка передач","val":"Автомат"},"fuel":{"key":"Тип двигателя","val":"Дизель"},"vin":{"key":"VIN","val":"JTJCV00WX04002038"},"steering-wheel":{"key":"Руль","val":"Левый"},"create_time":{"key":"Дата размещения","val":"13-05-2020"},"update_time":{"key":"Дата обновления","val":"16-06-2020"},"comments":"<p>Автомобиль в идеальном состоянии!&amp;nbsp;</p>\n<p>Тойота Центр Тула (ООО СМАРТ-Т) предлагает большой выбор автомобилей с пробегом с соблюдением гарантии качества и юридической чистоты сделки.</p>\n<p>Данный автомобиль возможно приобрести дистанционно с БЕСПЛАТНОЙ доставкой на дом! (в пределах г. Тула)</p>\n<p>Подробную информацию вы можете получить в виде On-Line презентации автомобиля (фото и видео файлы), с помощью удобного для вас мессенджера (E-mail, Viber, WhatsApp и прочее).</p>\n<p>На автомобиле был проведен комплексный осмотр и диагностика всех узлов и агрегатов, а именно:</p>\n<p>- Диагностика элементов подвески и ходовой части автомобиля;</p>\n<p>- Проверка работоспособности штатного и дополнительного оборудования;</p>\n<p>- Проверка кузова на предмет повреждений с измерением толщины лакокрасочного покрытия;</p>\n<p>- Проверка автомобиля на залог, кредит, розыск, запрет регистрационных действий, историю регистраций и участие в дорожно-транспортных происшествиях.</p>\n<p>Наши автомобили проходят ПРЕДПРОДАЖНУЮ ПОДГОТОВКУ, которая включает в себя, проверку узлов и агрегатов автомобиля, а также полную химчистку салона. Наши автомобили готовы к эксплуатации с первого дня приобретения.</p>\n<p>Мы предлагаем широкий спектр услуг:</p>\n<p>- TRADE-IN Мы с радостью примем Ваш автомобиль в обмен на один из наших автомобилей за дополнительную скидку Для клиентов, сдающих автомобиль по программе TRADE-IN, действуют специальные условия.</p>\n<p>- КРЕДИТ Позвольте себе больше с предложениями от наших банков- партнеров.</p>\n<p>- СТРАХОВАНИЕ Мы сделаем Вам лучшее предложение на полисы КАСКО и ОСАГО от ведущих компаний.</p>\n<p>Условия приобретения автомобиля в кредит, специальные предложения, а так же более подробную информацию по автомобилю и способу приобретения, уточняйте у менеджеров отдела продаж по телефону!&amp;nbsp;</p>","images":{"preview":{"url":"http://img.carcopy.ru/e23e/c85b/28c5/7345/265a/1fb3/97b8/ad8c/e01e/6a0b/e23ec85b28c57345265a1fb397b8ad8ce01e6a0b_68x0.jpg","name":0,"width":68,"height":51},"photos":[{"url":"http://img.carcopy.ru/e23e/c85b/28c5/7345/265a/1fb3/97b8/ad8c/e01e/6a0b/e23ec85b28c57345265a1fb397b8ad8ce01e6a0b_400x0.jpg","name":1,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/e23e/c85b/28c5/7345/265a/1fb3/97b8/ad8c/e01e/6a0b/e23ec85b28c57345265a1fb397b8ad8ce01e6a0b_1600x0.jpg"},{"url":"http://img.carcopy.ru/9be3/d154/f9c3/d63e/17a1/ffd8/246c/87a2/dc8b/2c5c/9be3d154f9c3d63e17a1ffd8246c87a2dc8b2c5c_400x0.jpg","name":2,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/9be3/d154/f9c3/d63e/17a1/ffd8/246c/87a2/dc8b/2c5c/9be3d154f9c3d63e17a1ffd8246c87a2dc8b2c5c_1600x0.jpg"},{"url":"http://img.carcopy.ru/50b7/eec5/b816/7ca3/b52f/09bb/f0ec/6211/39cd/8e95/50b7eec5b8167ca3b52f09bbf0ec621139cd8e95_400x0.jpg","name":3,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/50b7/eec5/b816/7ca3/b52f/09bb/f0ec/6211/39cd/8e95/50b7eec5b8167ca3b52f09bbf0ec621139cd8e95_1600x0.jpg"},{"url":"http://img.carcopy.ru/77a3/38a0/f43d/a400/646a/543a/95ec/c324/77e3/d4de/77a338a0f43da400646a543a95ecc32477e3d4de_400x0.jpg","name":4,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/77a3/38a0/f43d/a400/646a/543a/95ec/c324/77e3/d4de/77a338a0f43da400646a543a95ecc32477e3d4de_1600x0.jpg"},{"url":"http://img.carcopy.ru/4d82/7371/9a2c/17e5/92b8/f131/f2ed/1f78/0052/4b5c/4d8273719a2c17e592b8f131f2ed1f7800524b5c_400x0.jpg","name":5,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/4d82/7371/9a2c/17e5/92b8/f131/f2ed/1f78/0052/4b5c/4d8273719a2c17e592b8f131f2ed1f7800524b5c_1600x0.jpg"},{"url":"http://img.carcopy.ru/bf72/0874/7d6e/0f17/33fc/6101/b796/d635/ca7f/c653/bf7208747d6e0f1733fc6101b796d635ca7fc653_400x0.jpg","name":6,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/bf72/0874/7d6e/0f17/33fc/6101/b796/d635/ca7f/c653/bf7208747d6e0f1733fc6101b796d635ca7fc653_1600x0.jpg"},{"url":"http://img.carcopy.ru/a04a/1d79/1a18/b9d3/f25d/8257/f792/5aad/0f1a/c9b3/a04a1d791a18b9d3f25d8257f7925aad0f1ac9b3_400x0.jpg","name":7,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/a04a/1d79/1a18/b9d3/f25d/8257/f792/5aad/0f1a/c9b3/a04a1d791a18b9d3f25d8257f7925aad0f1ac9b3_1600x0.jpg"},{"url":"http://img.carcopy.ru/2d63/cec7/b6ba/9d58/feca/939f/3c31/78d6/b8c2/3cdb/2d63cec7b6ba9d58feca939f3c3178d6b8c23cdb_400x0.jpg","name":8,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/2d63/cec7/b6ba/9d58/feca/939f/3c31/78d6/b8c2/3cdb/2d63cec7b6ba9d58feca939f3c3178d6b8c23cdb_1600x0.jpg"},{"url":"http://img.carcopy.ru/129b/8015/0433/39e0/c0c1/0db2/7ad0/0b45/7700/d9fc/129b8015043339e0c0c10db27ad00b457700d9fc_400x0.jpg","name":9,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/129b/8015/0433/39e0/c0c1/0db2/7ad0/0b45/7700/d9fc/129b8015043339e0c0c10db27ad00b457700d9fc_1600x0.jpg"},{"url":"http://img.carcopy.ru/c3a6/9d9c/2ab8/5585/ff93/1bb4/63cb/4569/70da/79af/c3a69d9c2ab85585ff931bb463cb456970da79af_400x0.jpg","name":10,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/c3a6/9d9c/2ab8/5585/ff93/1bb4/63cb/4569/70da/79af/c3a69d9c2ab85585ff931bb463cb456970da79af_1600x0.jpg"},{"url":"http://img.carcopy.ru/0622/24c9/1b42/95e5/2cca/d78b/6cc7/24e8/6dc4/9ba8/062224c91b4295e52ccad78b6cc724e86dc49ba8_400x0.jpg","name":11,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/0622/24c9/1b42/95e5/2cca/d78b/6cc7/24e8/6dc4/9ba8/062224c91b4295e52ccad78b6cc724e86dc49ba8_1600x0.jpg"},{"url":"http://img.carcopy.ru/ee37/9152/feda/37fa/8373/5a29/2784/a305/6999/5ad6/ee379152feda37fa83735a292784a30569995ad6_400x0.jpg","name":12,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/ee37/9152/feda/37fa/8373/5a29/2784/a305/6999/5ad6/ee379152feda37fa83735a292784a30569995ad6_1600x0.jpg"},{"url":"http://img.carcopy.ru/d2eb/1f14/edc6/faa4/972c/3861/fc69/8616/b633/4bf0/d2eb1f14edc6faa4972c3861fc698616b6334bf0_400x0.jpg","name":13,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/d2eb/1f14/edc6/faa4/972c/3861/fc69/8616/b633/4bf0/d2eb1f14edc6faa4972c3861fc698616b6334bf0_1600x0.jpg"},{"url":"http://img.carcopy.ru/d4eb/20fb/1516/22ce/6fba/d7a8/1a71/8e0c/9a2c/73d7/d4eb20fb151622ce6fbad7a81a718e0c9a2c73d7_400x0.jpg","name":14,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/d4eb/20fb/1516/22ce/6fba/d7a8/1a71/8e0c/9a2c/73d7/d4eb20fb151622ce6fbad7a81a718e0c9a2c73d7_1600x0.jpg"},{"url":"http://img.carcopy.ru/ecbe/41ff/bb0d/a8c5/87ad/c8b3/1996/a27f/74a8/d5f1/ecbe41ffbb0da8c587adc8b31996a27f74a8d5f1_400x0.jpg","name":15,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/ecbe/41ff/bb0d/a8c5/87ad/c8b3/1996/a27f/74a8/d5f1/ecbe41ffbb0da8c587adc8b31996a27f74a8d5f1_1600x0.jpg"},{"url":"http://img.carcopy.ru/34ea/b34b/1462/fbdb/1797/204f/fec4/0e20/77af/3636/34eab34b1462fbdb1797204ffec40e2077af3636_400x0.jpg","name":16,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/34ea/b34b/1462/fbdb/1797/204f/fec4/0e20/77af/3636/34eab34b1462fbdb1797204ffec40e2077af3636_1600x0.jpg"},{"url":"http://img.carcopy.ru/3b7c/07cc/5c35/ad3e/ac1b/0b79/2307/8ed4/5799/1ae3/3b7c07cc5c35ad3eac1b0b7923078ed457991ae3_400x0.jpg","name":17,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/3b7c/07cc/5c35/ad3e/ac1b/0b79/2307/8ed4/5799/1ae3/3b7c07cc5c35ad3eac1b0b7923078ed457991ae3_1600x0.jpg"}]},"contacts":{"seller-phone1":{"key":"Тел","val":"+7 (487) 251-64-87 "}},"seller":{"name":"Тестовая карта","city":"Шелаболиха","address":"Южное шоссе, д. 37, лит. А"},"special":null,"highlight":null,"is-gibdd-ok":true,"last-price-change-datetime":null,"private-offer-flag":false}'
+                >
+                  <div class="credit-page__vehicle-card__image-container">
+                    <div
+                      class="credit-page__vehicle-card__image"
+                      style="
+                        background-image: url('http://img.carcopy.ru/e23e/c85b/28c5/7345/265a/1fb3/97b8/ad8c/e01e/6a0b/e23ec85b28c57345265a1fb397b8ad8ce01e6a0b_400x0.jpg');
+                      "
+                    ></div>
+                  </div>
+                  <div class="credit-page__vehicle-card__info-container">
+                    <h4
+                      class="credit-page__vehicle-card__title"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title=""
+                      data-original-title="Lexus LX, 2016"
+                    >
+                      Lexus LX, 2016
+                    </h4>
+                    <p class="credit-page__vehicle-card__modification">null</p>
+                    <p class="credit-page__vehicle-card__price">4370000 руб</p>
+                  </div>
+                </article>
+                <article
+                  class="credit-page__vehicle-card"
+                  data-vehicle='{"id_vehicle":8531583,"seller_id":3322,"make":{"key":"Марка","val":"Lexus"},"make_id":35,"model":{"key":"Модель","val":"ES"},"model_id":963,"modification":{"key":"Модификация","val":null},"modification_id":null,"price":{"key":"Цена","val":"2580000 руб"},"price_rur":2580000,"price_eur":32598.35,"price_usd":36650.32,"category":{"key":"Категория","val":"Седан"},"body_type_id":6,"usage":{"key":"Тип","val":"подержанная"},"first_registration":{"key":"Год выпуска","val":2018},"cover":{"key":"Пробег","val":"32000 км"},"power":{"key":"Мощность","val":"200 Л.С. / 148 кВт"},"owners_number":{"key":"Число владельцев","val":2},"cubic_capacity":{"key":"Объем двиг.","val":2500},"drive":{"key":"Привод","val":"Передний"},"color":{"key":"Цвет кузова","val":"Серебряный"},"color_id":11,"doors":{"key":"Число дверей","val":4},"gearbox":{"key":"Коробка передач","val":"Автомат"},"fuel":{"key":"Тип двигателя","val":"Бензин"},"vin":{"key":"VIN","val":"JTHB11B1802004608"},"steering-wheel":{"key":"Руль","val":"Левый"},"create_time":{"key":"Дата размещения","val":"13-05-2020"},"update_time":{"key":"Дата обновления","val":"16-06-2020"},"comments":"<p>Тойота Центр Тула (ООО СМАРТ-Т) предлагает большой выбор автомобилей с пробегом с соблюдением гарантии качества и юридической чистоты сделки.<br />Данный автомобиль возможно приобрести дистанционно с БЕСПЛАТНОЙ доставкой на дом! (в пределах г. Тула)<br />Подробную информацию вы можете получить в виде On-Line презентации автомобиля (фото и видео файлы), с помощью удобного для вас мессенджера (E-mail, Viber, WhatsApp и прочее).<br />На автомобиле был проведен комплексный осмотр и диагностика всех узлов и агрегатов, а именно:<br />- Диагностика элементов подвески и ходовой части автомобиля;<br />- Проверка работоспособности штатного и дополнительного оборудования;<br />- Проверка кузова на предмет повреждений с измерением толщины лакокрасочного покрытия;<br />- Проверка автомобиля на залог, кредит, розыск, запрет регистрационных действий, историю регистраций и участие в дорожно-транспортных происшествиях.<br />Наши автомобили проходят ПРЕДПРОДАЖНУЮ ПОДГОТОВКУ, которая включает в себя, проверку узлов и агрегатов автомобиля, а также полную химчистку салона. Наши автомобили готовы к эксплуатации с первого дня приобретения.<br />Мы предлагаем широкий спектр услуг:<br />- TRADE-IN Мы с радостью примем Ваш автомобиль в обмен на один из наших автомобилей за дополнительную скидку Для клиентов, сдающих автомобиль по программе TRADE-IN, действуют специальные условия.<br />- КРЕДИТ Позвольте себе больше с предложениями от наших банков- партнеров.<br />- СТРАХОВАНИЕ Мы сделаем Вам лучшее предложение на полисы КАСКО и ОСАГО от ведущих компаний.<br />Условия приобретения автомобиля в кредит, специальные предложения, а так же более подробную информацию по автомобилю и способу приобретения , уточняйте у менеджеров отдела продаж по телефону!&amp;nbsp;</p>","images":{"preview":{"url":"http://img.carcopy.ru/f918/51dc/50b2/40ae/7727/4136/717f/f859/bd9a/fb1d/f91851dc50b240ae77274136717ff859bd9afb1d_68x0.jpg","name":0,"width":68,"height":45},"photos":[{"url":"http://img.carcopy.ru/f918/51dc/50b2/40ae/7727/4136/717f/f859/bd9a/fb1d/f91851dc50b240ae77274136717ff859bd9afb1d_400x0.jpg","name":1,"width":1280,"height":854,"big_url":"http://img.carcopy.ru/f918/51dc/50b2/40ae/7727/4136/717f/f859/bd9a/fb1d/f91851dc50b240ae77274136717ff859bd9afb1d_1600x0.jpg"},{"url":"http://img.carcopy.ru/266c/eac9/f6dd/4737/cbca/ecba/6e5a/ab05/3ff5/5665/266ceac9f6dd4737cbcaecba6e5aab053ff55665_400x0.jpg","name":2,"width":1280,"height":854,"big_url":"http://img.carcopy.ru/266c/eac9/f6dd/4737/cbca/ecba/6e5a/ab05/3ff5/5665/266ceac9f6dd4737cbcaecba6e5aab053ff55665_1600x0.jpg"},{"url":"http://img.carcopy.ru/48b2/3d06/0f11/301e/ff6c/7128/cc8d/0ee6/6592/87c4/48b23d060f11301eff6c7128cc8d0ee6659287c4_400x0.jpg","name":3,"width":1280,"height":854,"big_url":"http://img.carcopy.ru/48b2/3d06/0f11/301e/ff6c/7128/cc8d/0ee6/6592/87c4/48b23d060f11301eff6c7128cc8d0ee6659287c4_1600x0.jpg"},{"url":"http://img.carcopy.ru/6f61/eb81/1420/c221/b68a/85fd/4a51/57bc/00c2/0dda/6f61eb811420c221b68a85fd4a5157bc00c20dda_400x0.jpg","name":4,"width":1280,"height":854,"big_url":"http://img.carcopy.ru/6f61/eb81/1420/c221/b68a/85fd/4a51/57bc/00c2/0dda/6f61eb811420c221b68a85fd4a5157bc00c20dda_1600x0.jpg"},{"url":"http://img.carcopy.ru/0035/0b39/b95e/e371/d3b7/4393/ddec/2771/ed45/65ce/00350b39b95ee371d3b74393ddec2771ed4565ce_400x0.jpg","name":5,"width":1280,"height":854,"big_url":"http://img.carcopy.ru/0035/0b39/b95e/e371/d3b7/4393/ddec/2771/ed45/65ce/00350b39b95ee371d3b74393ddec2771ed4565ce_1600x0.jpg"},{"url":"http://img.carcopy.ru/429b/7db4/b1a5/6063/adf1/85f9/993c/3381/e8b4/f811/429b7db4b1a56063adf185f9993c3381e8b4f811_400x0.jpg","name":6,"width":1280,"height":854,"big_url":"http://img.carcopy.ru/429b/7db4/b1a5/6063/adf1/85f9/993c/3381/e8b4/f811/429b7db4b1a56063adf185f9993c3381e8b4f811_1600x0.jpg"},{"url":"http://img.carcopy.ru/5e29/b8f5/9d1d/8a80/2f10/8bbe/be4a/d2da/88a6/6e08/5e29b8f59d1d8a802f108bbebe4ad2da88a66e08_400x0.jpg","name":7,"width":1280,"height":854,"big_url":"http://img.carcopy.ru/5e29/b8f5/9d1d/8a80/2f10/8bbe/be4a/d2da/88a6/6e08/5e29b8f59d1d8a802f108bbebe4ad2da88a66e08_1600x0.jpg"},{"url":"http://img.carcopy.ru/e342/aa3e/277a/0a15/7865/e0bb/108d/678d/6e11/4d6e/e342aa3e277a0a157865e0bb108d678d6e114d6e_400x0.jpg","name":8,"width":1280,"height":854,"big_url":"http://img.carcopy.ru/e342/aa3e/277a/0a15/7865/e0bb/108d/678d/6e11/4d6e/e342aa3e277a0a157865e0bb108d678d6e114d6e_1600x0.jpg"},{"url":"http://img.carcopy.ru/286f/4f28/b4d4/c088/4965/d934/f0c3/0b33/8765/3ecd/286f4f28b4d4c0884965d934f0c30b3387653ecd_400x0.jpg","name":9,"width":1280,"height":854,"big_url":"http://img.carcopy.ru/286f/4f28/b4d4/c088/4965/d934/f0c3/0b33/8765/3ecd/286f4f28b4d4c0884965d934f0c30b3387653ecd_1600x0.jpg"},{"url":"http://img.carcopy.ru/8f46/9d8e/8b0d/448a/2736/ce33/a448/d27c/e081/e2dd/8f469d8e8b0d448a2736ce33a448d27ce081e2dd_400x0.jpg","name":10,"width":1280,"height":854,"big_url":"http://img.carcopy.ru/8f46/9d8e/8b0d/448a/2736/ce33/a448/d27c/e081/e2dd/8f469d8e8b0d448a2736ce33a448d27ce081e2dd_1600x0.jpg"},{"url":"http://img.carcopy.ru/4f45/6427/2a1c/da25/ff6c/6acb/06f7/0541/0f4c/1604/4f4564272a1cda25ff6c6acb06f705410f4c1604_400x0.jpg","name":11,"width":1280,"height":854,"big_url":"http://img.carcopy.ru/4f45/6427/2a1c/da25/ff6c/6acb/06f7/0541/0f4c/1604/4f4564272a1cda25ff6c6acb06f705410f4c1604_1600x0.jpg"},{"url":"http://img.carcopy.ru/b082/7274/28e1/4b07/eb3b/6427/fa3b/da70/7def/0e2e/b082727428e14b07eb3b6427fa3bda707def0e2e_400x0.jpg","name":12,"width":1280,"height":854,"big_url":"http://img.carcopy.ru/b082/7274/28e1/4b07/eb3b/6427/fa3b/da70/7def/0e2e/b082727428e14b07eb3b6427fa3bda707def0e2e_1600x0.jpg"}]},"contacts":{"seller-phone1":{"key":"Тел","val":"+7 (487) 251-64-87 "}},"seller":{"name":"Тестовая карта","city":"Шелаболиха","address":"Южное шоссе, д. 37, лит. А"},"special":null,"highlight":null,"is-gibdd-ok":true,"last-price-change-datetime":null,"private-offer-flag":false}'
+                >
+                  <div class="credit-page__vehicle-card__image-container">
+                    <div
+                      class="credit-page__vehicle-card__image"
+                      style="
+                        background-image: url('http://img.carcopy.ru/f918/51dc/50b2/40ae/7727/4136/717f/f859/bd9a/fb1d/f91851dc50b240ae77274136717ff859bd9afb1d_400x0.jpg');
+                      "
+                    ></div>
+                  </div>
+                  <div class="credit-page__vehicle-card__info-container">
+                    <h4
+                      class="credit-page__vehicle-card__title"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title=""
+                      data-original-title="Lexus ES, 2018"
+                    >
+                      Lexus ES, 2018
+                    </h4>
+                    <p class="credit-page__vehicle-card__modification">null</p>
+                    <p class="credit-page__vehicle-card__price">2580000 руб</p>
+                  </div>
+                </article>
+                <article
+                  class="credit-page__vehicle-card"
+                  data-vehicle='{"id_vehicle":8531595,"seller_id":3322,"make":{"key":"Марка","val":"Nissan"},"make_id":47,"model":{"key":"Модель","val":"Murano"},"model_id":1298,"modification":{"key":"Модификация","val":null},"modification_id":null,"price":{"key":"Цена","val":"2180000 руб"},"price_rur":2180000,"price_eur":27544.35,"price_usd":30968.11,"category":{"key":"Категория","val":"Внедорожник"},"body_type_id":3,"usage":{"key":"Тип","val":"подержанная"},"first_registration":{"key":"Год выпуска","val":2017},"cover":{"key":"Пробег","val":"31000 км"},"power":{"key":"Мощность","val":"249 Л.С. / 184 кВт"},"owners_number":{"key":"Число владельцев","val":2},"cubic_capacity":{"key":"Объем двиг.","val":3500},"drive":{"key":"Привод","val":"Полный"},"color":{"key":"Цвет кузова","val":"Черный"},"color_id":10,"doors":{"key":"Число дверей","val":5},"gearbox":{"key":"Коробка передач","val":"Автомат вариатор"},"fuel":{"key":"Тип двигателя","val":"Бензин"},"vin":{"key":"VIN","val":"Z8NTANZ52GS002893"},"steering-wheel":{"key":"Руль","val":"Левый"},"create_time":{"key":"Дата размещения","val":"13-05-2020"},"update_time":{"key":"Дата обновления","val":"16-06-2020"},"comments":"<p>Тойота Центр Тула (ООО СМАРТ-Т) предлагает большой выбор автомобилей с пробегом с соблюдением гарантии качества и юридической чистоты сделки.</p>\n<p>Данный автомобиль возможно приобрести дистанционно с БЕСПЛАТНОЙ доставкой на дом! (в пределах г. Тула)</p>\n<p>Подробную информацию вы можете получить в виде On-Line презентации автомобиля (фото и видео файлы), с помощью удобного для вас мессенджера (E-mail, Viber, WhatsApp и прочее).</p>\n<p>На автомобиле был проведен комплексный осмотр и диагностика всех узлов и агрегатов, а именно:</p>\n<p>- Диагностика элементов подвески и ходовой части автомобиля;</p>\n<p>- Проверка работоспособности штатного и дополнительного оборудования;</p>\n<p>- Проверка кузова на предмет повреждений с измерением толщины лакокрасочного покрытия;</p>\n<p>- Проверка автомобиля на залог, кредит, розыск, запрет регистрационных действий, историю регистраций и участие в дорожно-транспортных происшествиях.</p>\n<p>Наши автомобили проходят ПРЕДПРОДАЖНУЮ ПОДГОТОВКУ, которая включает в себя, проверку узлов и агрегатов автомобиля, а также полную химчистку салона. Наши автомобили готовы к эксплуатации с первого дня приобретения.</p>\n<p>Мы предлагаем широкий спектр услуг:</p>\n<p>- TRADE-IN Мы с радостью примем Ваш автомобиль в обмен на один из наших автомобилей за дополнительную скидку Для клиентов, сдающих автомобиль по программе TRADE-IN, действуют специальные условия.</p>\n<p>- КРЕДИТ Позвольте себе больше с предложениями от наших банков- партнеров.</p>\n<p>- СТРАХОВАНИЕ Мы сделаем Вам лучшее предложение на полисы КАСКО и ОСАГО от ведущих компаний.</p>\n<p>Условия приобретения автомобиля в кредит, специальные предложения, а так же более подробную информацию по автомобилю и способу приобретения, уточняйте у менеджеров отдела продаж по телефону!&amp;nbsp;</p>","images":{"preview":{"url":"http://img.carcopy.ru/0dcb/dc19/a6ce/89a3/8193/c61d/9f8f/b848/bff7/736f/0dcbdc19a6ce89a38193c61d9f8fb848bff7736f_68x0.jpg","name":0,"width":68,"height":51},"photos":[{"url":"http://img.carcopy.ru/0dcb/dc19/a6ce/89a3/8193/c61d/9f8f/b848/bff7/736f/0dcbdc19a6ce89a38193c61d9f8fb848bff7736f_400x0.jpg","name":1,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/0dcb/dc19/a6ce/89a3/8193/c61d/9f8f/b848/bff7/736f/0dcbdc19a6ce89a38193c61d9f8fb848bff7736f_1600x0.jpg"},{"url":"http://img.carcopy.ru/fcb6/04bc/0e5c/9163/0650/6842/58f4/18f1/47b7/d344/fcb604bc0e5c91630650684258f418f147b7d344_400x0.jpg","name":2,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/fcb6/04bc/0e5c/9163/0650/6842/58f4/18f1/47b7/d344/fcb604bc0e5c91630650684258f418f147b7d344_1600x0.jpg"},{"url":"http://img.carcopy.ru/72ae/d2d5/7e80/e542/d7ed/3287/2054/e118/dbe3/0938/72aed2d57e80e542d7ed32872054e118dbe30938_400x0.jpg","name":3,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/72ae/d2d5/7e80/e542/d7ed/3287/2054/e118/dbe3/0938/72aed2d57e80e542d7ed32872054e118dbe30938_1600x0.jpg"},{"url":"http://img.carcopy.ru/3085/dc07/6de4/5ccd/a211/d784/a692/7912/76f5/8f8d/3085dc076de45ccda211d784a692791276f58f8d_400x0.jpg","name":4,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/3085/dc07/6de4/5ccd/a211/d784/a692/7912/76f5/8f8d/3085dc076de45ccda211d784a692791276f58f8d_1600x0.jpg"},{"url":"http://img.carcopy.ru/69e1/6a8f/28da/00ea/9e37/0a8d/9a40/4c80/0b3e/dabf/69e16a8f28da00ea9e370a8d9a404c800b3edabf_400x0.jpg","name":5,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/69e1/6a8f/28da/00ea/9e37/0a8d/9a40/4c80/0b3e/dabf/69e16a8f28da00ea9e370a8d9a404c800b3edabf_1600x0.jpg"},{"url":"http://img.carcopy.ru/a9a0/1135/0b85/001e/b6a2/ed0d/39f7/6035/ca7a/1b34/a9a011350b85001eb6a2ed0d39f76035ca7a1b34_400x0.jpg","name":6,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/a9a0/1135/0b85/001e/b6a2/ed0d/39f7/6035/ca7a/1b34/a9a011350b85001eb6a2ed0d39f76035ca7a1b34_1600x0.jpg"},{"url":"http://img.carcopy.ru/47fe/ddd1/3171/9295/87d6/e63e/7758/da68/7ceb/c68e/47feddd13171929587d6e63e7758da687cebc68e_400x0.jpg","name":7,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/47fe/ddd1/3171/9295/87d6/e63e/7758/da68/7ceb/c68e/47feddd13171929587d6e63e7758da687cebc68e_1600x0.jpg"},{"url":"http://img.carcopy.ru/5992/6ff5/5c4b/d508/9531/8ef4/6d49/d0a7/e98b/8ed4/59926ff55c4bd50895318ef46d49d0a7e98b8ed4_400x0.jpg","name":8,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/5992/6ff5/5c4b/d508/9531/8ef4/6d49/d0a7/e98b/8ed4/59926ff55c4bd50895318ef46d49d0a7e98b8ed4_1600x0.jpg"},{"url":"http://img.carcopy.ru/003e/1812/8950/bf0b/6f3f/7866/4f63/d29b/052b/447a/003e18128950bf0b6f3f78664f63d29b052b447a_400x0.jpg","name":9,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/003e/1812/8950/bf0b/6f3f/7866/4f63/d29b/052b/447a/003e18128950bf0b6f3f78664f63d29b052b447a_1600x0.jpg"},{"url":"http://img.carcopy.ru/8f54/1467/7694/78da/94ad/aae0/aa6a/94b1/0d24/e220/8f541467769478da94adaae0aa6a94b10d24e220_400x0.jpg","name":10,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/8f54/1467/7694/78da/94ad/aae0/aa6a/94b1/0d24/e220/8f541467769478da94adaae0aa6a94b10d24e220_1600x0.jpg"},{"url":"http://img.carcopy.ru/bb02/64b8/7e37/1502/ffa6/5b85/0803/9759/f8cd/93c2/bb0264b87e371502ffa65b8508039759f8cd93c2_400x0.jpg","name":11,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/bb02/64b8/7e37/1502/ffa6/5b85/0803/9759/f8cd/93c2/bb0264b87e371502ffa65b8508039759f8cd93c2_1600x0.jpg"},{"url":"http://img.carcopy.ru/1271/b6ba/ff35/8be4/b9a4/f08c/1200/0744/3fc6/ce83/1271b6baff358be4b9a4f08c120007443fc6ce83_400x0.jpg","name":12,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/1271/b6ba/ff35/8be4/b9a4/f08c/1200/0744/3fc6/ce83/1271b6baff358be4b9a4f08c120007443fc6ce83_1600x0.jpg"},{"url":"http://img.carcopy.ru/fb9b/ff7c/052b/cbef/52c9/97f2/c350/94ef/95fb/d2a2/fb9bff7c052bcbef52c997f2c35094ef95fbd2a2_400x0.jpg","name":13,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/fb9b/ff7c/052b/cbef/52c9/97f2/c350/94ef/95fb/d2a2/fb9bff7c052bcbef52c997f2c35094ef95fbd2a2_1600x0.jpg"},{"url":"http://img.carcopy.ru/4a7e/4cce/52a6/c14f/28e6/6b76/9511/5575/c229/6c4d/4a7e4cce52a6c14f28e66b7695115575c2296c4d_400x0.jpg","name":14,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/4a7e/4cce/52a6/c14f/28e6/6b76/9511/5575/c229/6c4d/4a7e4cce52a6c14f28e66b7695115575c2296c4d_1600x0.jpg"},{"url":"http://img.carcopy.ru/ee3c/3c26/a050/35bf/d12b/16b2/ee6a/ec5a/e631/cb01/ee3c3c26a05035bfd12b16b2ee6aec5ae631cb01_400x0.jpg","name":15,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/ee3c/3c26/a050/35bf/d12b/16b2/ee6a/ec5a/e631/cb01/ee3c3c26a05035bfd12b16b2ee6aec5ae631cb01_1600x0.jpg"},{"url":"http://img.carcopy.ru/b872/137b/a1f8/def8/2f6d/3672/d935/f843/e8db/72d6/b872137ba1f8def82f6d3672d935f843e8db72d6_400x0.jpg","name":16,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/b872/137b/a1f8/def8/2f6d/3672/d935/f843/e8db/72d6/b872137ba1f8def82f6d3672d935f843e8db72d6_1600x0.jpg"},{"url":"http://img.carcopy.ru/638a/f7b8/fd80/b330/b2bc/67c9/a886/00ec/1b36/3330/638af7b8fd80b330b2bc67c9a88600ec1b363330_400x0.jpg","name":17,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/638a/f7b8/fd80/b330/b2bc/67c9/a886/00ec/1b36/3330/638af7b8fd80b330b2bc67c9a88600ec1b363330_1600x0.jpg"},{"url":"http://img.carcopy.ru/4513/cc66/bfcc/3e28/25e1/8026/e2b8/2e86/16aa/330b/4513cc66bfcc3e2825e18026e2b82e8616aa330b_400x0.jpg","name":18,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/4513/cc66/bfcc/3e28/25e1/8026/e2b8/2e86/16aa/330b/4513cc66bfcc3e2825e18026e2b82e8616aa330b_1600x0.jpg"},{"url":"http://img.carcopy.ru/1f24/3481/d311/59ab/497b/2cc1/461d/83ea/c076/dca0/1f243481d31159ab497b2cc1461d83eac076dca0_400x0.jpg","name":19,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/1f24/3481/d311/59ab/497b/2cc1/461d/83ea/c076/dca0/1f243481d31159ab497b2cc1461d83eac076dca0_1600x0.jpg"},{"url":"http://img.carcopy.ru/1dd5/ef20/8bfe/305f/16fb/9760/784a/adc1/d7b4/c160/1dd5ef208bfe305f16fb9760784aadc1d7b4c160_400x0.jpg","name":20,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/1dd5/ef20/8bfe/305f/16fb/9760/784a/adc1/d7b4/c160/1dd5ef208bfe305f16fb9760784aadc1d7b4c160_1600x0.jpg"}]},"contacts":{"seller-phone1":{"key":"Тел","val":"+7 (487) 251-64-87 "}},"seller":{"name":"Тестовая карта","city":"Шелаболиха","address":"Южное шоссе, д. 37, лит. А"},"special":null,"highlight":null,"is-gibdd-ok":true,"last-price-change-datetime":null,"private-offer-flag":false}'
+                >
+                  <div class="credit-page__vehicle-card__image-container">
+                    <div
+                      class="credit-page__vehicle-card__image"
+                      style="
+                        background-image: url('http://img.carcopy.ru/0dcb/dc19/a6ce/89a3/8193/c61d/9f8f/b848/bff7/736f/0dcbdc19a6ce89a38193c61d9f8fb848bff7736f_400x0.jpg');
+                      "
+                    ></div>
+                  </div>
+                  <div class="credit-page__vehicle-card__info-container">
+                    <h4
+                      class="credit-page__vehicle-card__title"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title=""
+                      data-original-title="Nissan Murano, 2017"
+                    >
+                      Nissan Murano, 2017
+                    </h4>
+                    <p class="credit-page__vehicle-card__modification">null</p>
+                    <p class="credit-page__vehicle-card__price">2180000 руб</p>
+                  </div>
+                </article>
+                <article
+                  class="credit-page__vehicle-card"
+                  data-vehicle='{"id_vehicle":8533290,"seller_id":3322,"make":{"key":"Марка","val":"Ford"},"make_id":21,"model":{"key":"Модель","val":"Transit"},"model_id":204,"modification":{"key":"Модификация","val":"2.2 FWD TDCi MT (125 л.с.)"},"modification_id":21930329,"price":{"key":"Цена","val":"2000000 руб"},"price_rur":2000000,"price_eur":25270.04,"price_usd":28411.11,"category":{"key":"Категория","val":"Микроавтобус"},"body_type_id":13003,"usage":{"key":"Тип","val":"новая"},"first_registration":{"key":"Год выпуска","val":2020},"power":{"key":"Мощность","val":"125 Л.С. / 92 кВт"},"cubic_capacity":{"key":"Объем двиг.","val":2200},"drive":{"key":"Привод","val":"Передний"},"color":{"key":"Цвет кузова","val":"Черный"},"color_id":10,"doors":{"key":"Число дверей","val":5},"gearbox":{"key":"Коробка передач","val":"Механическая"},"fuel":{"key":"Тип двигателя","val":"Дизель"},"vin":{"key":"VIN","val":"KNAFH221295800562"},"condition":{"key":"Состояние","val":"Отличное"},"condition_id":320,"steering-wheel":{"key":"Руль","val":"Левый"},"custom-clean":{"key":"Растаможен","val":"Да"},"presence":{"key":"Наличие","val":"В наличии"},"create_time":{"key":"Дата размещения","val":"15-05-2020"},"update_time":{"key":"Дата обновления","val":"16-06-2020"},"contacts":{"seller-phone1":{"key":"Тел","val":"+79216313207 "}},"seller":{"name":"Тестовая карта","city":"Шелаболиха","address":"Южное шоссе, д. 37, лит. А"},"special":false,"highlight":false,"is-gibdd-ok":true,"last-price-change-datetime":"2020-05-15 13:08:30","private-offer-flag":false}'
+                >
+                  <div class="credit-page__vehicle-card__image-container">
+                    <div
+                      class="credit-page__vehicle-card__image"
+                      style="background-image: url('http://ronliskey.com/img/placeholder.png');"
+                    ></div>
+                  </div>
+                  <div class="credit-page__vehicle-card__info-container">
+                    <h4
+                      class="credit-page__vehicle-card__title"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title=""
+                      data-original-title="Ford Transit, 2020"
+                    >
+                      Ford Transit, 2020
+                    </h4>
+                    <p class="credit-page__vehicle-card__modification">
+                      2.2 FWD TDCi MT (125 л.с.)
+                    </p>
+                    <p class="credit-page__vehicle-card__price">2000000 руб</p>
+                  </div>
+                </article>
+                <article
+                  class="credit-page__vehicle-card"
+                  data-vehicle='{"id_vehicle":8531599,"seller_id":3322,"make":{"key":"Марка","val":"Toyota"},"make_id":66,"model":{"key":"Модель","val":"Highlander"},"model_id":1754,"modification":{"key":"Модификация","val":null},"modification_id":null,"price":{"key":"Цена","val":"1990000 руб"},"price_rur":1990000,"price_eur":25143.69,"price_usd":28269.05,"category":{"key":"Категория","val":"Внедорожник"},"body_type_id":3,"usage":{"key":"Тип","val":"подержанная"},"first_registration":{"key":"Год выпуска","val":2015},"cover":{"key":"Пробег","val":"105000 км"},"power":{"key":"Мощность","val":"249 Л.С. / 184 кВт"},"owners_number":{"key":"Число владельцев","val":2},"cubic_capacity":{"key":"Объем двиг.","val":3500},"drive":{"key":"Привод","val":"Полный"},"color":{"key":"Цвет кузова","val":"Черный"},"color_id":10,"doors":{"key":"Число дверей","val":5},"gearbox":{"key":"Коробка передач","val":"Автомат"},"fuel":{"key":"Тип двигателя","val":"Бензин"},"vin":{"key":"VIN","val":"5TDDKRFH90S135603"},"steering-wheel":{"key":"Руль","val":"Левый"},"create_time":{"key":"Дата размещения","val":"13-05-2020"},"update_time":{"key":"Дата обновления","val":"16-06-2020"},"comments":"<p>Автомобиль в идельном состоянии !</p>\n<p>Полностью весь обслужен!</p>\n<p>Вложений совсем никаких не требует !</p>\n<p>Масло , фильтр, масло в коробке все меняно на 100.000 км!&amp;nbsp; &amp;nbsp;</p>\n<p>Тойота Центр Тула (ООО СМАРТ-Т) предлагает большой выбор автомобилей с пробегом с соблюдением гарантии качества и юридической чистоты сделки.</p>\n<p>Данный автомобиль возможно приобрести дистанционно с БЕСПЛАТНОЙ доставкой на дом! (в пределах г. Тула)</p>\n<p>Подробную информацию вы можете получить в виде On-Line презентации автомобиля (фото и видео файлы), с помощью удобного для вас мессенджера (E-mail, Viber, WhatsApp и прочее).</p>\n<p>На автомобиле был проведен комплексный осмотр и диагностика всех узлов и агрегатов, а именно:</p>\n<p>- Диагностика элементов подвески и ходовой части автомобиля;</p>\n<p>- Проверка работоспособности штатного и дополнительного оборудования;</p>\n<p>- Проверка кузова на предмет повреждений с измерением толщины лакокрасочного покрытия;</p>\n<p>- Проверка автомобиля на залог, кредит, розыск, запрет регистрационных действий, историю регистраций и участие в дорожно-транспортных происшествиях.</p>\n<p>Наши автомобили проходят ПРЕДПРОДАЖНУЮ ПОДГОТОВКУ, которая включает в себя, проверку узлов и агрегатов автомобиля, а также полную химчистку салона. Наши автомобили готовы к эксплуатации с первого дня приобретения.</p>\n<p>Мы предлагаем широкий спектр услуг:</p>\n<p>- TRADE-IN Мы с радостью примем Ваш автомобиль в обмен на один из наших автомобилей за дополнительную скидку Для клиентов, сдающих автомобиль по программе TRADE-IN, действуют специальные условия.</p>\n<p>- КРЕДИТ Позвольте себе больше с предложениями от наших банков- партнеров.</p>\n<p>- СТРАХОВАНИЕ Мы сделаем Вам лучшее предложение на полисы КАСКО и ОСАГО от ведущих компаний.</p>\n<p>Условия приобретения автомобиля в кредит, специальные предложения, а так же более подробную информацию по автомобилю и способу приобретения, уточняйте у менеджеров отдела продаж по телефону!&amp;nbsp;</p>","images":{"preview":{"url":"http://img.carcopy.ru/5344/6170/0b5f/c580/ad88/8970/9bc2/d792/4801/e21e/534461700b5fc580ad8889709bc2d7924801e21e_68x0.jpg","name":0,"width":68,"height":45},"photos":[{"url":"http://img.carcopy.ru/5344/6170/0b5f/c580/ad88/8970/9bc2/d792/4801/e21e/534461700b5fc580ad8889709bc2d7924801e21e_400x0.jpg","name":1,"width":1280,"height":854,"big_url":"http://img.carcopy.ru/5344/6170/0b5f/c580/ad88/8970/9bc2/d792/4801/e21e/534461700b5fc580ad8889709bc2d7924801e21e_1600x0.jpg"},{"url":"http://img.carcopy.ru/3b2b/ecd7/6fe1/8269/7df9/92d4/471e/6628/3403/bb08/3b2becd76fe182697df992d4471e66283403bb08_400x0.jpg","name":2,"width":1280,"height":854,"big_url":"http://img.carcopy.ru/3b2b/ecd7/6fe1/8269/7df9/92d4/471e/6628/3403/bb08/3b2becd76fe182697df992d4471e66283403bb08_1600x0.jpg"},{"url":"http://img.carcopy.ru/dfc8/5998/e582/e23f/e101/9dd3/e14a/e71b/ea1a/d6d3/dfc85998e582e23fe1019dd3e14ae71bea1ad6d3_400x0.jpg","name":3,"width":1280,"height":854,"big_url":"http://img.carcopy.ru/dfc8/5998/e582/e23f/e101/9dd3/e14a/e71b/ea1a/d6d3/dfc85998e582e23fe1019dd3e14ae71bea1ad6d3_1600x0.jpg"},{"url":"http://img.carcopy.ru/80f4/3264/2a30/6332/4bc6/1890/78e1/eca8/17d4/ea6c/80f432642a3063324bc6189078e1eca817d4ea6c_400x0.jpg","name":4,"width":1280,"height":854,"big_url":"http://img.carcopy.ru/80f4/3264/2a30/6332/4bc6/1890/78e1/eca8/17d4/ea6c/80f432642a3063324bc6189078e1eca817d4ea6c_1600x0.jpg"},{"url":"http://img.carcopy.ru/4fd2/b27c/d11e/fa92/d1af/1edc/4aaf/ba9a/2904/3c57/4fd2b27cd11efa92d1af1edc4aafba9a29043c57_400x0.jpg","name":5,"width":1280,"height":854,"big_url":"http://img.carcopy.ru/4fd2/b27c/d11e/fa92/d1af/1edc/4aaf/ba9a/2904/3c57/4fd2b27cd11efa92d1af1edc4aafba9a29043c57_1600x0.jpg"},{"url":"http://img.carcopy.ru/a619/bbee/9a73/4af1/1e84/81cb/0f8e/a52e/3976/c498/a619bbee9a734af11e8481cb0f8ea52e3976c498_400x0.jpg","name":6,"width":1280,"height":854,"big_url":"http://img.carcopy.ru/a619/bbee/9a73/4af1/1e84/81cb/0f8e/a52e/3976/c498/a619bbee9a734af11e8481cb0f8ea52e3976c498_1600x0.jpg"},{"url":"http://img.carcopy.ru/5748/c835/d259/4bb0/807c/cf97/6bea/ae36/7ce6/8667/5748c835d2594bb0807ccf976beaae367ce68667_400x0.jpg","name":7,"width":1280,"height":854,"big_url":"http://img.carcopy.ru/5748/c835/d259/4bb0/807c/cf97/6bea/ae36/7ce6/8667/5748c835d2594bb0807ccf976beaae367ce68667_1600x0.jpg"},{"url":"http://img.carcopy.ru/1f2c/c24e/63fd/b520/678f/9586/7292/ce4a/8237/24f8/1f2cc24e63fdb520678f95867292ce4a823724f8_400x0.jpg","name":8,"width":1280,"height":854,"big_url":"http://img.carcopy.ru/1f2c/c24e/63fd/b520/678f/9586/7292/ce4a/8237/24f8/1f2cc24e63fdb520678f95867292ce4a823724f8_1600x0.jpg"},{"url":"http://img.carcopy.ru/d52d/1dc4/bf18/1011/fc0b/f7c8/43ce/17cc/fe93/f9b4/d52d1dc4bf181011fc0bf7c843ce17ccfe93f9b4_400x0.jpg","name":9,"width":1280,"height":854,"big_url":"http://img.carcopy.ru/d52d/1dc4/bf18/1011/fc0b/f7c8/43ce/17cc/fe93/f9b4/d52d1dc4bf181011fc0bf7c843ce17ccfe93f9b4_1600x0.jpg"},{"url":"http://img.carcopy.ru/4cdf/7b19/84ce/5d9a/23d2/175c/d212/3e5c/c548/4626/4cdf7b1984ce5d9a23d2175cd2123e5cc5484626_400x0.jpg","name":10,"width":1280,"height":854,"big_url":"http://img.carcopy.ru/4cdf/7b19/84ce/5d9a/23d2/175c/d212/3e5c/c548/4626/4cdf7b1984ce5d9a23d2175cd2123e5cc5484626_1600x0.jpg"},{"url":"http://img.carcopy.ru/e1dd/e978/5e00/8b54/edba/a653/54ae/d125/2557/07dd/e1dde9785e008b54edbaa65354aed125255707dd_400x0.jpg","name":11,"width":1280,"height":854,"big_url":"http://img.carcopy.ru/e1dd/e978/5e00/8b54/edba/a653/54ae/d125/2557/07dd/e1dde9785e008b54edbaa65354aed125255707dd_1600x0.jpg"},{"url":"http://img.carcopy.ru/5dff/b942/5b92/3c3c/b539/4345/af57/cda8/a742/d05c/5dffb9425b923c3cb5394345af57cda8a742d05c_400x0.jpg","name":12,"width":1280,"height":854,"big_url":"http://img.carcopy.ru/5dff/b942/5b92/3c3c/b539/4345/af57/cda8/a742/d05c/5dffb9425b923c3cb5394345af57cda8a742d05c_1600x0.jpg"}]},"contacts":{"seller-phone1":{"key":"Тел","val":"+7 (487) 251-64-87 "}},"seller":{"name":"Тестовая карта","city":"Шелаболиха","address":"Южное шоссе, д. 37, лит. А"},"special":null,"highlight":null,"is-gibdd-ok":true,"last-price-change-datetime":null,"private-offer-flag":false}'
+                >
+                  <div class="credit-page__vehicle-card__image-container">
+                    <div
+                      class="credit-page__vehicle-card__image"
+                      style="
+                        background-image: url('http://img.carcopy.ru/5344/6170/0b5f/c580/ad88/8970/9bc2/d792/4801/e21e/534461700b5fc580ad8889709bc2d7924801e21e_400x0.jpg');
+                      "
+                    ></div>
+                  </div>
+                  <div class="credit-page__vehicle-card__info-container">
+                    <h4
+                      class="credit-page__vehicle-card__title"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title=""
+                      data-original-title="Toyota Highlander, 2015"
+                    >
+                      Toyota Highlander, 2015
+                    </h4>
+                    <p class="credit-page__vehicle-card__modification">null</p>
+                    <p class="credit-page__vehicle-card__price">1990000 руб</p>
+                  </div>
+                </article>
+                <article
+                  class="credit-page__vehicle-card"
+                  data-vehicle='{"id_vehicle":8531591,"seller_id":3322,"make":{"key":"Марка","val":"Toyota"},"make_id":66,"model":{"key":"Модель","val":"RAV4"},"model_id":1794,"modification":{"key":"Модификация","val":null},"modification_id":null,"price":{"key":"Цена","val":"1430000 руб"},"price_rur":1430000,"price_eur":18068.08,"price_usd":20313.94,"category":{"key":"Категория","val":"Внедорожник"},"body_type_id":3,"usage":{"key":"Тип","val":"подержанная"},"first_registration":{"key":"Год выпуска","val":2017},"cover":{"key":"Пробег","val":"78000 км"},"power":{"key":"Мощность","val":"146 Л.С. / 108 кВт"},"owners_number":{"key":"Число владельцев","val":1},"cubic_capacity":{"key":"Объем двиг.","val":2000},"drive":{"key":"Привод","val":"Полный"},"color":{"key":"Цвет кузова","val":"Белый"},"color_id":13,"doors":{"key":"Число дверей","val":5},"gearbox":{"key":"Коробка передач","val":"Автомат вариатор"},"fuel":{"key":"Тип двигателя","val":"Бензин"},"vin":{"key":"VIN","val":"XW7RDREV10S012367"},"steering-wheel":{"key":"Руль","val":"Левый"},"create_time":{"key":"Дата размещения","val":"13-05-2020"},"update_time":{"key":"Дата обновления","val":"16-06-2020"},"comments":"<p>Тойота Центр Тула (ООО СМАРТ-Т) предлагает большой выбор автомобилей с пробегом с соблюдением гарантии качества и юридической чистоты сделки.</p>\n<p>Данный автомобиль возможно приобрести дистанционно с БЕСПЛАТНОЙ доставкой на дом! (в пределах г. Тула)</p>\n<p>Подробную информацию вы можете получить в виде On-Line презентации автомобиля (фото и видео файлы), с помощью удобного для вас мессенджера (E-mail, Viber, WhatsApp и прочее).</p>\n<p>На автомобиле был проведен комплексный осмотр и диагностика всех узлов и агрегатов, а именно:</p>\n<p>- Диагностика элементов подвески и ходовой части автомобиля;</p>\n<p>- Проверка работоспособности штатного и дополнительного оборудования;</p>\n<p>- Проверка кузова на предмет повреждений с измерением толщины лакокрасочного покрытия;</p>\n<p>- Проверка автомобиля на залог, кредит, розыск, запрет регистрационных действий, историю регистраций и участие в дорожно-транспортных происшествиях.</p>\n<p>Наши автомобили проходят ПРЕДПРОДАЖНУЮ ПОДГОТОВКУ, которая включает в себя, проверку узлов и агрегатов автомобиля, а также полную химчистку салона. Наши автомобили готовы к эксплуатации с первого дня приобретения.</p>\n<p>Мы предлагаем широкий спектр услуг:</p>\n<p>- TRADE-IN Мы с радостью примем Ваш автомобиль в обмен на один из наших автомобилей за дополнительную скидку Для клиентов, сдающих автомобиль по программе TRADE-IN, действуют специальные условия.</p>\n<p>- КРЕДИТ Позвольте себе больше с предложениями от наших банков- партнеров.</p>\n<p>- СТРАХОВАНИЕ Мы сделаем Вам лучшее предложение на полисы КАСКО и ОСАГО от ведущих компаний.</p>\n<p>Условия приобретения автомобиля в кредит, специальные предложения, а так же более подробную информацию по автомобилю и способу приобретения, уточняйте у менеджеров отдела продаж по телефону!&amp;nbsp;</p>","images":{"preview":{"url":"http://img.carcopy.ru/2157/0dd4/9a92/77ea/db22/313d/70f3/202d/3593/5175/21570dd49a9277eadb22313d70f3202d35935175_68x0.jpg","name":0,"width":68,"height":51},"photos":[{"url":"http://img.carcopy.ru/2157/0dd4/9a92/77ea/db22/313d/70f3/202d/3593/5175/21570dd49a9277eadb22313d70f3202d35935175_400x0.jpg","name":1,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/2157/0dd4/9a92/77ea/db22/313d/70f3/202d/3593/5175/21570dd49a9277eadb22313d70f3202d35935175_1600x0.jpg"},{"url":"http://img.carcopy.ru/b740/ea4d/d9a8/7417/64f8/cc2f/4d9e/a46d/ba64/1265/b740ea4dd9a8741764f8cc2f4d9ea46dba641265_400x0.jpg","name":2,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/b740/ea4d/d9a8/7417/64f8/cc2f/4d9e/a46d/ba64/1265/b740ea4dd9a8741764f8cc2f4d9ea46dba641265_1600x0.jpg"},{"url":"http://img.carcopy.ru/e2d5/7281/2a98/79dd/5d7d/b35b/06fc/22d3/915b/0414/e2d572812a9879dd5d7db35b06fc22d3915b0414_400x0.jpg","name":3,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/e2d5/7281/2a98/79dd/5d7d/b35b/06fc/22d3/915b/0414/e2d572812a9879dd5d7db35b06fc22d3915b0414_1600x0.jpg"},{"url":"http://img.carcopy.ru/2649/6abc/1549/75b3/601c/72c1/f67b/5d8c/693b/40cd/26496abc154975b3601c72c1f67b5d8c693b40cd_400x0.jpg","name":4,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/2649/6abc/1549/75b3/601c/72c1/f67b/5d8c/693b/40cd/26496abc154975b3601c72c1f67b5d8c693b40cd_1600x0.jpg"},{"url":"http://img.carcopy.ru/0ab7/7717/ae32/81c9/ee35/d80b/f819/80e4/969f/3469/0ab77717ae3281c9ee35d80bf81980e4969f3469_400x0.jpg","name":5,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/0ab7/7717/ae32/81c9/ee35/d80b/f819/80e4/969f/3469/0ab77717ae3281c9ee35d80bf81980e4969f3469_1600x0.jpg"},{"url":"http://img.carcopy.ru/bc6b/cd1d/9eb3/3a38/726a/ffad/d924/e4ee/bac1/04c5/bc6bcd1d9eb33a38726affadd924e4eebac104c5_400x0.jpg","name":6,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/bc6b/cd1d/9eb3/3a38/726a/ffad/d924/e4ee/bac1/04c5/bc6bcd1d9eb33a38726affadd924e4eebac104c5_1600x0.jpg"},{"url":"http://img.carcopy.ru/31e4/14b3/7109/cce2/ff0c/77e0/2a57/f1ef/b658/5141/31e414b37109cce2ff0c77e02a57f1efb6585141_400x0.jpg","name":7,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/31e4/14b3/7109/cce2/ff0c/77e0/2a57/f1ef/b658/5141/31e414b37109cce2ff0c77e02a57f1efb6585141_1600x0.jpg"},{"url":"http://img.carcopy.ru/4d14/d2ea/8dbd/1177/3474/97a0/ad55/a26e/0b8f/4b96/4d14d2ea8dbd1177347497a0ad55a26e0b8f4b96_400x0.jpg","name":8,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/4d14/d2ea/8dbd/1177/3474/97a0/ad55/a26e/0b8f/4b96/4d14d2ea8dbd1177347497a0ad55a26e0b8f4b96_1600x0.jpg"},{"url":"http://img.carcopy.ru/e596/4f0c/ae0b/ace8/0400/7ab3/c4b5/91e1/21cb/ca1b/e5964f0cae0bace804007ab3c4b591e121cbca1b_400x0.jpg","name":9,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/e596/4f0c/ae0b/ace8/0400/7ab3/c4b5/91e1/21cb/ca1b/e5964f0cae0bace804007ab3c4b591e121cbca1b_1600x0.jpg"},{"url":"http://img.carcopy.ru/65a4/40b2/1ee4/84ae/c774/609c/c2ce/763f/e150/e794/65a440b21ee484aec774609cc2ce763fe150e794_400x0.jpg","name":10,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/65a4/40b2/1ee4/84ae/c774/609c/c2ce/763f/e150/e794/65a440b21ee484aec774609cc2ce763fe150e794_1600x0.jpg"},{"url":"http://img.carcopy.ru/41fb/0c1d/0820/047c/8faa/6922/ce14/8e07/437a/03eb/41fb0c1d0820047c8faa6922ce148e07437a03eb_400x0.jpg","name":11,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/41fb/0c1d/0820/047c/8faa/6922/ce14/8e07/437a/03eb/41fb0c1d0820047c8faa6922ce148e07437a03eb_1600x0.jpg"},{"url":"http://img.carcopy.ru/168b/dbd2/08d8/17ce/5b89/2335/b099/5a0c/cbcb/50a6/168bdbd208d817ce5b892335b0995a0ccbcb50a6_400x0.jpg","name":12,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/168b/dbd2/08d8/17ce/5b89/2335/b099/5a0c/cbcb/50a6/168bdbd208d817ce5b892335b0995a0ccbcb50a6_1600x0.jpg"},{"url":"http://img.carcopy.ru/a898/5d88/b03d/c984/5a6c/2d65/0a08/3702/8c59/ff10/a8985d88b03dc9845a6c2d650a0837028c59ff10_400x0.jpg","name":13,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/a898/5d88/b03d/c984/5a6c/2d65/0a08/3702/8c59/ff10/a8985d88b03dc9845a6c2d650a0837028c59ff10_1600x0.jpg"},{"url":"http://img.carcopy.ru/d018/d205/40bf/0694/4a03/a173/1c9b/63c5/7664/4361/d018d20540bf06944a03a1731c9b63c576644361_400x0.jpg","name":14,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/d018/d205/40bf/0694/4a03/a173/1c9b/63c5/7664/4361/d018d20540bf06944a03a1731c9b63c576644361_1600x0.jpg"},{"url":"http://img.carcopy.ru/d4a5/f213/f697/dc54/b27d/2934/b793/538a/f816/4e10/d4a5f213f697dc54b27d2934b793538af8164e10_400x0.jpg","name":15,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/d4a5/f213/f697/dc54/b27d/2934/b793/538a/f816/4e10/d4a5f213f697dc54b27d2934b793538af8164e10_1600x0.jpg"},{"url":"http://img.carcopy.ru/fcf8/d453/f753/8605/be6f/267d/9676/8665/b430/afc4/fcf8d453f7538605be6f267d96768665b430afc4_400x0.jpg","name":16,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/fcf8/d453/f753/8605/be6f/267d/9676/8665/b430/afc4/fcf8d453f7538605be6f267d96768665b430afc4_1600x0.jpg"},{"url":"http://img.carcopy.ru/6ac1/9002/f8b3/7834/9824/b208/4383/9be9/96d8/6af6/6ac19002f8b378349824b20843839be996d86af6_400x0.jpg","name":17,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/6ac1/9002/f8b3/7834/9824/b208/4383/9be9/96d8/6af6/6ac19002f8b378349824b20843839be996d86af6_1600x0.jpg"},{"url":"http://img.carcopy.ru/37ed/6fa0/5d9a/d265/4d58/bbfc/02fb/8b2f/bccf/126c/37ed6fa05d9ad2654d58bbfc02fb8b2fbccf126c_400x0.jpg","name":18,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/37ed/6fa0/5d9a/d265/4d58/bbfc/02fb/8b2f/bccf/126c/37ed6fa05d9ad2654d58bbfc02fb8b2fbccf126c_1600x0.jpg"},{"url":"http://img.carcopy.ru/736f/3062/9fb6/ef45/df07/ee40/e18f/01c6/934c/5849/736f30629fb6ef45df07ee40e18f01c6934c5849_400x0.jpg","name":19,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/736f/3062/9fb6/ef45/df07/ee40/e18f/01c6/934c/5849/736f30629fb6ef45df07ee40e18f01c6934c5849_1600x0.jpg"},{"url":"http://img.carcopy.ru/1fcc/5eed/a8f1/6dd3/5161/f87f/5f52/797b/117a/59ca/1fcc5eeda8f16dd35161f87f5f52797b117a59ca_400x0.jpg","name":20,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/1fcc/5eed/a8f1/6dd3/5161/f87f/5f52/797b/117a/59ca/1fcc5eeda8f16dd35161f87f5f52797b117a59ca_1600x0.jpg"}]},"contacts":{"seller-phone1":{"key":"Тел","val":"+7 (487) 251-64-87 "}},"seller":{"name":"Тестовая карта","city":"Шелаболиха","address":"Южное шоссе, д. 37, лит. А"},"special":null,"highlight":null,"is-gibdd-ok":true,"last-price-change-datetime":null,"private-offer-flag":false}'
+                >
+                  <div class="credit-page__vehicle-card__image-container">
+                    <div
+                      class="credit-page__vehicle-card__image"
+                      style="
+                        background-image: url('http://img.carcopy.ru/2157/0dd4/9a92/77ea/db22/313d/70f3/202d/3593/5175/21570dd49a9277eadb22313d70f3202d35935175_400x0.jpg');
+                      "
+                    ></div>
+                  </div>
+                  <div class="credit-page__vehicle-card__info-container">
+                    <h4
+                      class="credit-page__vehicle-card__title"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title=""
+                      data-original-title="Toyota RAV4, 2017"
+                    >
+                      Toyota RAV4, 2017
+                    </h4>
+                    <p class="credit-page__vehicle-card__modification">null</p>
+                    <p class="credit-page__vehicle-card__price">1430000 руб</p>
+                  </div>
+                </article>
+                <article
+                  class="credit-page__vehicle-card"
+                  data-vehicle='{"id_vehicle":8531597,"seller_id":3322,"make":{"key":"Марка","val":"Lexus"},"make_id":35,"model":{"key":"Модель","val":"RX"},"model_id":973,"modification":{"key":"Модификация","val":null},"modification_id":null,"price":{"key":"Цена","val":"1350000 руб"},"price_rur":1350000,"price_eur":17057.28,"price_usd":19177.5,"category":{"key":"Категория","val":"Внедорожник"},"body_type_id":3,"usage":{"key":"Тип","val":"подержанная"},"first_registration":{"key":"Год выпуска","val":2012},"cover":{"key":"Пробег","val":"120000 км"},"power":{"key":"Мощность","val":"188 Л.С. / 139 кВт"},"owners_number":{"key":"Число владельцев","val":2},"cubic_capacity":{"key":"Объем двиг.","val":2700},"drive":{"key":"Привод","val":"Передний"},"color":{"key":"Цвет кузова","val":"Черный"},"color_id":10,"doors":{"key":"Число дверей","val":5},"gearbox":{"key":"Коробка передач","val":"Автомат"},"fuel":{"key":"Тип двигателя","val":"Бензин"},"vin":{"key":"VIN","val":"JTJZA11A102426587"},"steering-wheel":{"key":"Руль","val":"Левый"},"create_time":{"key":"Дата размещения","val":"13-05-2020"},"update_time":{"key":"Дата обновления","val":"16-06-2020"},"options":["Штатная сигнализация"],"options_id":[54],"comments":"<p>ПТС оригинал,комплект резины,стоит протиугонная система и сигнализация!!!</p>\n<p>Тойота Центр Тула (ООО СМАРТ-Т) предлагает большой выбор автомобилей с пробегом с соблюдением гарантии качества и юридической чистоты сделки.</p>\n<p>Данный автомобиль возможно приобрести дистанционно с БЕСПЛАТНОЙ доставкой на дом! (в пределах г. Тула)</p>\n<p>Подробную информацию вы можете получить в виде On-Line презентации автомобиля (фото и видео файлы), с помощью удобного для вас мессенджера (E-mail, Viber, WhatsApp и прочее).</p>\n<p>На автомобиле был проведен комплексный осмотр и диагностика всех узлов и агрегатов, а именно:</p>\n<p>- Диагностика элементов подвески и ходовой части автомобиля;</p>\n<p>- Проверка работоспособности штатного и дополнительного оборудования;</p>\n<p>- Проверка кузова на предмет повреждений с измерением толщины лакокрасочного покрытия;</p>\n<p>- Проверка автомобиля на залог, кредит, розыск, запрет регистрационных действий, историю регистраций и участие в дорожно-транспортных происшествиях.</p>\n<p>Наши автомобили проходят ПРЕДПРОДАЖНУЮ ПОДГОТОВКУ, которая включает в себя, проверку узлов и агрегатов автомобиля, а также полную химчистку салона. Наши автомобили готовы к эксплуатации с первого дня приобретения.</p>\n<p>Мы предлагаем широкий спектр услуг:</p>\n<p>- TRADE-IN Мы с радостью примем Ваш автомобиль в обмен на один из наших автомобилей за дополнительную скидку Для клиентов, сдающих автомобиль по программе TRADE-IN, действуют специальные условия.</p>\n<p>- КРЕДИТ Позвольте себе больше с предложениями от наших банков- партнеров.</p>\n<p>- СТРАХОВАНИЕ Мы сделаем Вам лучшее предложение на полисы КАСКО и ОСАГО от ведущих компаний.</p>\n<p>Условия приобретения автомобиля в кредит, специальные предложения, а так же более подробную информацию по автомобилю и способу приобретения, уточняйте у менеджеров отдела продаж по телефону!&amp;nbsp;</p>","images":{"preview":{"url":"http://img.carcopy.ru/f450/7666/646e/a47b/3aba/5094/cc20/7bc5/56d5/6c4c/f4507666646ea47b3aba5094cc207bc556d56c4c_68x0.jpg","name":0,"width":68,"height":51},"photos":[{"url":"http://img.carcopy.ru/f450/7666/646e/a47b/3aba/5094/cc20/7bc5/56d5/6c4c/f4507666646ea47b3aba5094cc207bc556d56c4c_400x0.jpg","name":1,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/f450/7666/646e/a47b/3aba/5094/cc20/7bc5/56d5/6c4c/f4507666646ea47b3aba5094cc207bc556d56c4c_1600x0.jpg"},{"url":"http://img.carcopy.ru/c7f0/bceb/d765/fd2e/f116/55c2/dd47/ac9f/fee8/a054/c7f0bcebd765fd2ef11655c2dd47ac9ffee8a054_400x0.jpg","name":2,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/c7f0/bceb/d765/fd2e/f116/55c2/dd47/ac9f/fee8/a054/c7f0bcebd765fd2ef11655c2dd47ac9ffee8a054_1600x0.jpg"},{"url":"http://img.carcopy.ru/9467/0ffc/3778/7201/dc61/e873/d6e4/5563/960e/aa0d/94670ffc37787201dc61e873d6e45563960eaa0d_400x0.jpg","name":3,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/9467/0ffc/3778/7201/dc61/e873/d6e4/5563/960e/aa0d/94670ffc37787201dc61e873d6e45563960eaa0d_1600x0.jpg"},{"url":"http://img.carcopy.ru/17f2/96da/2ba2/4d96/21f4/5669/9655/488b/47cb/06e2/17f296da2ba24d9621f456699655488b47cb06e2_400x0.jpg","name":4,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/17f2/96da/2ba2/4d96/21f4/5669/9655/488b/47cb/06e2/17f296da2ba24d9621f456699655488b47cb06e2_1600x0.jpg"},{"url":"http://img.carcopy.ru/cb42/14df/6b89/3ca3/e09b/4442/ffba/c446/d31c/e47d/cb4214df6b893ca3e09b4442ffbac446d31ce47d_400x0.jpg","name":5,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/cb42/14df/6b89/3ca3/e09b/4442/ffba/c446/d31c/e47d/cb4214df6b893ca3e09b4442ffbac446d31ce47d_1600x0.jpg"},{"url":"http://img.carcopy.ru/172f/1f14/c3d4/c60c/22c3/d93e/bbd6/a7a1/61e9/da95/172f1f14c3d4c60c22c3d93ebbd6a7a161e9da95_400x0.jpg","name":6,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/172f/1f14/c3d4/c60c/22c3/d93e/bbd6/a7a1/61e9/da95/172f1f14c3d4c60c22c3d93ebbd6a7a161e9da95_1600x0.jpg"},{"url":"http://img.carcopy.ru/3416/b6d6/30a4/fcdf/94a1/7cb9/f8ac/c3e3/f6eb/adad/3416b6d630a4fcdf94a17cb9f8acc3e3f6ebadad_400x0.jpg","name":7,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/3416/b6d6/30a4/fcdf/94a1/7cb9/f8ac/c3e3/f6eb/adad/3416b6d630a4fcdf94a17cb9f8acc3e3f6ebadad_1600x0.jpg"},{"url":"http://img.carcopy.ru/f3a7/6fe5/559a/44e2/0cfb/c66d/8d2a/d7a3/6320/2b79/f3a76fe5559a44e20cfbc66d8d2ad7a363202b79_400x0.jpg","name":8,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/f3a7/6fe5/559a/44e2/0cfb/c66d/8d2a/d7a3/6320/2b79/f3a76fe5559a44e20cfbc66d8d2ad7a363202b79_1600x0.jpg"},{"url":"http://img.carcopy.ru/b3d0/0f53/b09d/2a61/a3ee/e595/4af3/3d78/3f55/8f48/b3d00f53b09d2a61a3eee5954af33d783f558f48_400x0.jpg","name":9,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/b3d0/0f53/b09d/2a61/a3ee/e595/4af3/3d78/3f55/8f48/b3d00f53b09d2a61a3eee5954af33d783f558f48_1600x0.jpg"},{"url":"http://img.carcopy.ru/edde/819f/7d61/99ea/61f7/c7ba/86d5/0ce3/dccf/22cc/edde819f7d6199ea61f7c7ba86d50ce3dccf22cc_400x0.jpg","name":10,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/edde/819f/7d61/99ea/61f7/c7ba/86d5/0ce3/dccf/22cc/edde819f7d6199ea61f7c7ba86d50ce3dccf22cc_1600x0.jpg"},{"url":"http://img.carcopy.ru/6f2b/8201/e29f/c977/eac4/f831/a172/2cfe/810d/8494/6f2b8201e29fc977eac4f831a1722cfe810d8494_400x0.jpg","name":11,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/6f2b/8201/e29f/c977/eac4/f831/a172/2cfe/810d/8494/6f2b8201e29fc977eac4f831a1722cfe810d8494_1600x0.jpg"},{"url":"http://img.carcopy.ru/7249/fb5d/d3be/0b26/1670/bf84/1252/ebb6/154b/04f9/7249fb5dd3be0b261670bf841252ebb6154b04f9_400x0.jpg","name":12,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/7249/fb5d/d3be/0b26/1670/bf84/1252/ebb6/154b/04f9/7249fb5dd3be0b261670bf841252ebb6154b04f9_1600x0.jpg"},{"url":"http://img.carcopy.ru/ab25/33da/39e6/1eef/bc00/dd67/fb17/87b9/df32/7c38/ab2533da39e61eefbc00dd67fb1787b9df327c38_400x0.jpg","name":13,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/ab25/33da/39e6/1eef/bc00/dd67/fb17/87b9/df32/7c38/ab2533da39e61eefbc00dd67fb1787b9df327c38_1600x0.jpg"},{"url":"http://img.carcopy.ru/bcef/d4c4/73ca/a861/10a7/c680/4d6e/1d23/920c/08b7/bcefd4c473caa86110a7c6804d6e1d23920c08b7_400x0.jpg","name":14,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/bcef/d4c4/73ca/a861/10a7/c680/4d6e/1d23/920c/08b7/bcefd4c473caa86110a7c6804d6e1d23920c08b7_1600x0.jpg"},{"url":"http://img.carcopy.ru/2a16/de90/bbe8/75d2/01c5/b534/84ce/73c4/5095/db42/2a16de90bbe875d201c5b53484ce73c45095db42_400x0.jpg","name":15,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/2a16/de90/bbe8/75d2/01c5/b534/84ce/73c4/5095/db42/2a16de90bbe875d201c5b53484ce73c45095db42_1600x0.jpg"},{"url":"http://img.carcopy.ru/8fb7/98c1/de6c/fb41/54a7/4c7e/2b7a/7e6f/0012/1a3c/8fb798c1de6cfb4154a74c7e2b7a7e6f00121a3c_400x0.jpg","name":16,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/8fb7/98c1/de6c/fb41/54a7/4c7e/2b7a/7e6f/0012/1a3c/8fb798c1de6cfb4154a74c7e2b7a7e6f00121a3c_1600x0.jpg"},{"url":"http://img.carcopy.ru/d370/6d76/2edf/765e/96fc/2192/88bb/b17e/3aef/83cb/d3706d762edf765e96fc219288bbb17e3aef83cb_400x0.jpg","name":17,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/d370/6d76/2edf/765e/96fc/2192/88bb/b17e/3aef/83cb/d3706d762edf765e96fc219288bbb17e3aef83cb_1600x0.jpg"},{"url":"http://img.carcopy.ru/00b3/f60f/2c8b/fdde/3a5d/b73d/87ca/1d05/1a96/76f5/00b3f60f2c8bfdde3a5db73d87ca1d051a9676f5_400x0.jpg","name":18,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/00b3/f60f/2c8b/fdde/3a5d/b73d/87ca/1d05/1a96/76f5/00b3f60f2c8bfdde3a5db73d87ca1d051a9676f5_1600x0.jpg"},{"url":"http://img.carcopy.ru/15e3/635a/a56b/53d3/6307/f502/f404/8981/0eca/16c9/15e3635aa56b53d36307f502f40489810eca16c9_400x0.jpg","name":19,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/15e3/635a/a56b/53d3/6307/f502/f404/8981/0eca/16c9/15e3635aa56b53d36307f502f40489810eca16c9_1600x0.jpg"},{"url":"http://img.carcopy.ru/8ee2/f6ed/b74c/fdeb/fc1f/1507/6835/7238/69dc/2921/8ee2f6edb74cfdebfc1f15076835723869dc2921_400x0.jpg","name":20,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/8ee2/f6ed/b74c/fdeb/fc1f/1507/6835/7238/69dc/2921/8ee2f6edb74cfdebfc1f15076835723869dc2921_1600x0.jpg"}]},"contacts":{"seller-phone1":{"key":"Тел","val":"+7 (487) 251-64-87 "}},"seller":{"name":"Тестовая карта","city":"Шелаболиха","address":"Южное шоссе, д. 37, лит. А"},"special":null,"highlight":null,"is-gibdd-ok":true,"last-price-change-datetime":null,"private-offer-flag":false}'
+                >
+                  <div class="credit-page__vehicle-card__image-container">
+                    <div
+                      class="credit-page__vehicle-card__image"
+                      style="
+                        background-image: url('http://img.carcopy.ru/f450/7666/646e/a47b/3aba/5094/cc20/7bc5/56d5/6c4c/f4507666646ea47b3aba5094cc207bc556d56c4c_400x0.jpg');
+                      "
+                    ></div>
+                  </div>
+                  <div class="credit-page__vehicle-card__info-container">
+                    <h4
+                      class="credit-page__vehicle-card__title"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title=""
+                      data-original-title="Lexus RX, 2012"
+                    >
+                      Lexus RX, 2012
+                    </h4>
+                    <p class="credit-page__vehicle-card__modification">null</p>
+                    <p class="credit-page__vehicle-card__price">1350000 руб</p>
+                  </div>
+                </article>
+                <article
+                  class="credit-page__vehicle-card"
+                  data-vehicle='{"id_vehicle":8531602,"seller_id":3322,"make":{"key":"Марка","val":"Toyota"},"make_id":66,"model":{"key":"Модель","val":"RAV4"},"model_id":1794,"modification":{"key":"Модификация","val":"2.0 CVT (146 л.с.) 4WD"},"modification_id":9259070,"price":{"key":"Цена","val":"1345000 руб"},"price_rur":1345000,"price_eur":16994.1,"price_usd":19106.47,"category":{"key":"Категория","val":"Внедорожник"},"body_type_id":3,"usage":{"key":"Тип","val":"подержанная"},"first_registration":{"key":"Год выпуска","val":2015},"cover":{"key":"Пробег","val":"105000 км"},"power":{"key":"Мощность","val":"146 Л.С. / 108 кВт"},"owners_number":{"key":"Число владельцев","val":1},"cubic_capacity":{"key":"Объем двиг.","val":1988},"drive":{"key":"Привод","val":"Полный"},"color":{"key":"Цвет кузова","val":"Коричневый"},"color_id":3,"doors":{"key":"Число дверей","val":5},"gearbox":{"key":"Коробка передач","val":"Автомат"},"fuel":{"key":"Тип двигателя","val":"Бензин"},"vin":{"key":"VIN","val":"JTMRDREVX0D095454"},"condition":{"key":"Состояние","val":"Отличное"},"condition_id":320,"steering-wheel":{"key":"Руль","val":"Левый"},"custom-clean":{"key":"Растаможен","val":"Да"},"create_time":{"key":"Дата размещения","val":"13-05-2020"},"update_time":{"key":"Дата обновления","val":"16-06-2020"},"comments":"<p>Идеальное состояние автомобиля!</p>\n<p>Японская сборка!</p>\n<p>продленная гарантия!&amp;nbsp;<br />Без ДТП и окрасов-что является редкостью в наше время!<br />2 резины.<br />По салону без дефектов<br />Обслужен полностью у дилера (отметки ТО имеются)<br />ПТС оригинал 1 владелец&amp;nbsp;</p>\n<p>Тойота Центр Тула (ООО СМАРТ-Т) предлагает большой выбор автомобилей с пробегом с соблюдением гарантии качества и юридической чистоты сделки.</p>\n<p>Данный автомобиль возможно приобрести дистанционно с БЕСПЛАТНОЙ доставкой на дом! (в пределах г. Тула)</p>\n<p>Подробную информацию вы можете получить в виде On-Line презентации автомобиля (фото и видео файлы), с помощью удобного для вас мессенджера (E-mail, Viber, WhatsApp и прочее).</p>\n<p>На автомобиле был проведен комплексный осмотр и диагностика всех узлов и агрегатов, а именно:</p>\n<p>- Диагностика элементов подвески и ходовой части автомобиля;</p>\n<p>- Проверка работоспособности штатного и дополнительного оборудования;</p>\n<p>- Проверка кузова на предмет повреждений с измерением толщины лакокрасочного покрытия;</p>\n<p>- Проверка автомобиля на залог, кредит, розыск, запрет регистрационных действий, историю регистраций и участие в дорожно-транспортных происшествиях.</p>\n<p>Наши автомобили проходят ПРЕДПРОДАЖНУЮ ПОДГОТОВКУ, которая включает в себя, проверку узлов и агрегатов автомобиля, а также полную химчистку салона. Наши автомобили готовы к эксплуатации с первого дня приобретения.</p>\n<p>Мы предлагаем широкий спектр услуг:</p>\n<p>- TRADE-IN Мы с радостью примем Ваш автомобиль в обмен на один из наших автомобилей за дополнительную скидку Для клиентов, сдающих автомобиль по программе TRADE-IN, действуют специальные условия.</p>\n<p>- КРЕДИТ Позвольте себе больше с предложениями от наших банков- партнеров.</p>\n<p>- СТРАХОВАНИЕ Мы сделаем Вам лучшее предложение на полисы КАСКО и ОСАГО от ведущих компаний.</p>\n<p>Условия приобретения автомобиля в кредит, специальные предложения, а так же более подробную информацию по автомобилю и способу приобретения, уточняйте у менеджеров отдела продаж по телефону!&amp;nbsp;</p>","images":{"preview":{"url":"http://img.carcopy.ru/1c7b/559e/43d0/00f8/6252/7543/70cc/77e7/0b05/590a/1c7b559e43d000f86252754370cc77e70b05590a_68x0.jpg","name":0,"width":68,"height":45},"photos":[{"url":"http://img.carcopy.ru/1c7b/559e/43d0/00f8/6252/7543/70cc/77e7/0b05/590a/1c7b559e43d000f86252754370cc77e70b05590a_400x0.jpg","name":1,"width":1280,"height":854,"big_url":"http://img.carcopy.ru/1c7b/559e/43d0/00f8/6252/7543/70cc/77e7/0b05/590a/1c7b559e43d000f86252754370cc77e70b05590a_1600x0.jpg"},{"url":"http://img.carcopy.ru/5ad9/a14e/19bc/f603/9a53/1bda/4009/d62f/3c4e/3f19/5ad9a14e19bcf6039a531bda4009d62f3c4e3f19_400x0.jpg","name":2,"width":1280,"height":854,"big_url":"http://img.carcopy.ru/5ad9/a14e/19bc/f603/9a53/1bda/4009/d62f/3c4e/3f19/5ad9a14e19bcf6039a531bda4009d62f3c4e3f19_1600x0.jpg"},{"url":"http://img.carcopy.ru/8129/ed46/afc6/9f40/a6b7/7154/04a7/dbd2/73f8/989e/8129ed46afc69f40a6b7715404a7dbd273f8989e_400x0.jpg","name":3,"width":1280,"height":854,"big_url":"http://img.carcopy.ru/8129/ed46/afc6/9f40/a6b7/7154/04a7/dbd2/73f8/989e/8129ed46afc69f40a6b7715404a7dbd273f8989e_1600x0.jpg"},{"url":"http://img.carcopy.ru/12f4/0854/6329/63e1/5d3c/d87e/9eba/31ac/fe8b/5b5c/12f40854632963e15d3cd87e9eba31acfe8b5b5c_400x0.jpg","name":4,"width":1280,"height":854,"big_url":"http://img.carcopy.ru/12f4/0854/6329/63e1/5d3c/d87e/9eba/31ac/fe8b/5b5c/12f40854632963e15d3cd87e9eba31acfe8b5b5c_1600x0.jpg"},{"url":"http://img.carcopy.ru/bca5/a1b3/a616/7c8b/daab/b0a5/83e7/abef/03bf/319e/bca5a1b3a6167c8bdaabb0a583e7abef03bf319e_400x0.jpg","name":5,"width":1280,"height":854,"big_url":"http://img.carcopy.ru/bca5/a1b3/a616/7c8b/daab/b0a5/83e7/abef/03bf/319e/bca5a1b3a6167c8bdaabb0a583e7abef03bf319e_1600x0.jpg"},{"url":"http://img.carcopy.ru/c607/d944/9337/05e2/5b81/d4e5/79bb/4a27/f2e2/6f17/c607d944933705e25b81d4e579bb4a27f2e26f17_400x0.jpg","name":6,"width":1280,"height":854,"big_url":"http://img.carcopy.ru/c607/d944/9337/05e2/5b81/d4e5/79bb/4a27/f2e2/6f17/c607d944933705e25b81d4e579bb4a27f2e26f17_1600x0.jpg"},{"url":"http://img.carcopy.ru/16c8/904c/dab2/8227/2476/b78c/1bd8/49a9/0b18/ab27/16c8904cdab282272476b78c1bd849a90b18ab27_400x0.jpg","name":7,"width":1280,"height":854,"big_url":"http://img.carcopy.ru/16c8/904c/dab2/8227/2476/b78c/1bd8/49a9/0b18/ab27/16c8904cdab282272476b78c1bd849a90b18ab27_1600x0.jpg"},{"url":"http://img.carcopy.ru/7ded/5555/c262/c38b/5c25/a9e3/a606/b1a3/1acd/0f30/7ded5555c262c38b5c25a9e3a606b1a31acd0f30_400x0.jpg","name":8,"width":1280,"height":854,"big_url":"http://img.carcopy.ru/7ded/5555/c262/c38b/5c25/a9e3/a606/b1a3/1acd/0f30/7ded5555c262c38b5c25a9e3a606b1a31acd0f30_1600x0.jpg"},{"url":"http://img.carcopy.ru/799d/b75b/5a2e/487b/9826/f8c9/757c/5b9b/1bad/79ef/799db75b5a2e487b9826f8c9757c5b9b1bad79ef_400x0.jpg","name":9,"width":1280,"height":854,"big_url":"http://img.carcopy.ru/799d/b75b/5a2e/487b/9826/f8c9/757c/5b9b/1bad/79ef/799db75b5a2e487b9826f8c9757c5b9b1bad79ef_1600x0.jpg"},{"url":"http://img.carcopy.ru/28fc/a051/5055/3496/5c5a/6997/b53e/ce0d/116d/9459/28fca051505534965c5a6997b53ece0d116d9459_400x0.jpg","name":10,"width":1280,"height":854,"big_url":"http://img.carcopy.ru/28fc/a051/5055/3496/5c5a/6997/b53e/ce0d/116d/9459/28fca051505534965c5a6997b53ece0d116d9459_1600x0.jpg"},{"url":"http://img.carcopy.ru/92c5/e10e/59b0/5cb5/3f1b/362f/02f0/a726/0475/61de/92c5e10e59b05cb53f1b362f02f0a726047561de_400x0.jpg","name":11,"width":1280,"height":854,"big_url":"http://img.carcopy.ru/92c5/e10e/59b0/5cb5/3f1b/362f/02f0/a726/0475/61de/92c5e10e59b05cb53f1b362f02f0a726047561de_1600x0.jpg"},{"url":"http://img.carcopy.ru/b220/941d/7b82/cdb9/9b47/67a1/35b1/aa40/4a15/df08/b220941d7b82cdb99b4767a135b1aa404a15df08_400x0.jpg","name":12,"width":1280,"height":854,"big_url":"http://img.carcopy.ru/b220/941d/7b82/cdb9/9b47/67a1/35b1/aa40/4a15/df08/b220941d7b82cdb99b4767a135b1aa404a15df08_1600x0.jpg"}]},"contacts":{"seller-phone1":{"key":"Тел","val":"+7(487)251-64-87 "}},"seller":{"name":"Тестовая карта","city":"Шелаболиха","address":"Южное шоссе, д. 37, лит. А"},"special":false,"highlight":false,"is-gibdd-ok":true,"last-price-change-datetime":null,"private-offer-flag":false}'
+                >
+                  <div class="credit-page__vehicle-card__image-container">
+                    <div
+                      class="credit-page__vehicle-card__image"
+                      style="
+                        background-image: url('http://img.carcopy.ru/1c7b/559e/43d0/00f8/6252/7543/70cc/77e7/0b05/590a/1c7b559e43d000f86252754370cc77e70b05590a_400x0.jpg');
+                      "
+                    ></div>
+                  </div>
+                  <div class="credit-page__vehicle-card__info-container">
+                    <h4
+                      class="credit-page__vehicle-card__title"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title=""
+                      data-original-title="Toyota RAV4, 2015"
+                    >
+                      Toyota RAV4, 2015
+                    </h4>
+                    <p class="credit-page__vehicle-card__modification">2.0 CVT (146 л.с.) 4WD</p>
+                    <p class="credit-page__vehicle-card__price">1345000 руб</p>
+                  </div>
+                </article>
+                <article
+                  class="credit-page__vehicle-card"
+                  data-vehicle='{"id_vehicle":8531590,"seller_id":3322,"make":{"key":"Марка","val":"Toyota"},"make_id":66,"model":{"key":"Модель","val":"Camry"},"model_id":1724,"modification":{"key":"Модификация","val":null},"modification_id":null,"price":{"key":"Цена","val":"1300000 руб"},"price_rur":1300000,"price_eur":16425.53,"price_usd":18467.22,"category":{"key":"Категория","val":"Седан"},"body_type_id":6,"usage":{"key":"Тип","val":"подержанная"},"first_registration":{"key":"Год выпуска","val":2016},"cover":{"key":"Пробег","val":"50000 км"},"power":{"key":"Мощность","val":"181 Л.С. / 134 кВт"},"owners_number":{"key":"Число владельцев","val":1},"cubic_capacity":{"key":"Объем двиг.","val":2500},"drive":{"key":"Привод","val":"Передний"},"color":{"key":"Цвет кузова","val":"Серый"},"color_id":6,"doors":{"key":"Число дверей","val":4},"gearbox":{"key":"Коробка передач","val":"Автомат"},"fuel":{"key":"Тип двигателя","val":"Бензин"},"vin":{"key":"VIN","val":"XW7BF4FK50S137293"},"steering-wheel":{"key":"Руль","val":"Левый"},"create_time":{"key":"Дата размещения","val":"13-05-2020"},"update_time":{"key":"Дата обновления","val":"16-06-2020"},"options":["Обогрев зеркал","Электропривод зеркал","Датчик света","Круиз-контроль","Бортовой компьютер","Центральный замок","Штатный иммобилайзер","Подушка безопасности водителя","Подушка безопасности пассажира","Подушки безопасности боковые","Подушки безопасности боковые задние","Антиблокировочная система (ABS)","Система стабилизации (ESP)","USB","AUX","Противотуманные фары","Омыватель фар"],"options_id":[100,10,317,113,112,8,20,140,444,447,446,1,24,499,500,51,55],"comments":"<p>Тойота Центр Тула (ООО СМАРТ-Т) предлагает большой выбор автомобилей с пробегом с соблюдением гарантии качества и юридической чистоты сделки.</p>\n<p>Данный автомобиль возможно приобрести дистанционно с БЕСПЛАТНОЙ доставкой на дом! (в пределах г. Тула)</p>\n<p>Подробную информацию вы можете получить в виде On-Line презентации автомобиля (фото и видео файлы), с помощью удобного для вас мессенджера (E-mail, Viber, WhatsApp и прочее).</p>\n<p>На автомобиле был проведен комплексный осмотр и диагностика всех узлов и агрегатов, а именно:</p>\n<p>- Диагностика элементов подвески и ходовой части автомобиля;</p>\n<p>- Проверка работоспособности штатного и дополнительного оборудования;</p>\n<p>- Проверка кузова на предмет повреждений с измерением толщины лакокрасочного покрытия;</p>\n<p>- Проверка автомобиля на залог, кредит, розыск, запрет регистрационных действий, историю регистраций и участие в дорожно-транспортных происшествиях.</p>\n<p>Наши автомобили проходят ПРЕДПРОДАЖНУЮ ПОДГОТОВКУ, которая включает в себя, проверку узлов и агрегатов автомобиля, а также полную химчистку салона. Наши автомобили готовы к эксплуатации с первого дня приобретения.</p>\n<p>Мы предлагаем широкий спектр услуг:</p>\n<p>- TRADE-IN Мы с радостью примем Ваш автомобиль в обмен на один из наших автомобилей за дополнительную скидку Для клиентов, сдающих автомобиль по программе TRADE-IN, действуют специальные условия.</p>\n<p>- КРЕДИТ Позвольте себе больше с предложениями от наших банков- партнеров.</p>\n<p>- СТРАХОВАНИЕ Мы сделаем Вам лучшее предложение на полисы КАСКО и ОСАГО от ведущих компаний.</p>\n<p>Условия приобретения автомобиля в кредит, специальные предложения, а так же более подробную информацию по автомобилю и способу приобретения , уточняйте у менеджеров отдела продаж по телефону!&amp;nbsp;</p>","images":{"preview":{"url":"http://img.carcopy.ru/b015/6d86/7c72/4537/ce11/67ad/45d9/8592/c103/bf36/b0156d867c724537ce1167ad45d98592c103bf36_68x0.jpg","name":0,"width":68,"height":51},"photos":[{"url":"http://img.carcopy.ru/b015/6d86/7c72/4537/ce11/67ad/45d9/8592/c103/bf36/b0156d867c724537ce1167ad45d98592c103bf36_400x0.jpg","name":1,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/b015/6d86/7c72/4537/ce11/67ad/45d9/8592/c103/bf36/b0156d867c724537ce1167ad45d98592c103bf36_1600x0.jpg"},{"url":"http://img.carcopy.ru/73f7/f41d/5210/dd37/dccb/3300/f5fd/207f/1975/4bb8/73f7f41d5210dd37dccb3300f5fd207f19754bb8_400x0.jpg","name":2,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/73f7/f41d/5210/dd37/dccb/3300/f5fd/207f/1975/4bb8/73f7f41d5210dd37dccb3300f5fd207f19754bb8_1600x0.jpg"},{"url":"http://img.carcopy.ru/7609/5caf/f7b1/9db9/d391/c605/4dde/bcb1/939a/3cdf/76095caff7b19db9d391c6054ddebcb1939a3cdf_400x0.jpg","name":3,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/7609/5caf/f7b1/9db9/d391/c605/4dde/bcb1/939a/3cdf/76095caff7b19db9d391c6054ddebcb1939a3cdf_1600x0.jpg"},{"url":"http://img.carcopy.ru/16d2/f90c/bae0/1d58/8075/f323/9fe9/933b/094f/bb66/16d2f90cbae01d588075f3239fe9933b094fbb66_400x0.jpg","name":4,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/16d2/f90c/bae0/1d58/8075/f323/9fe9/933b/094f/bb66/16d2f90cbae01d588075f3239fe9933b094fbb66_1600x0.jpg"},{"url":"http://img.carcopy.ru/2a40/11cc/cb3c/4bed/5939/2362/2877/9e8a/e72c/0cec/2a4011cccb3c4bed5939236228779e8ae72c0cec_400x0.jpg","name":5,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/2a40/11cc/cb3c/4bed/5939/2362/2877/9e8a/e72c/0cec/2a4011cccb3c4bed5939236228779e8ae72c0cec_1600x0.jpg"},{"url":"http://img.carcopy.ru/3da4/1b1b/a2cf/1286/12a8/83be/7d76/6473/df00/76da/3da41b1ba2cf128612a883be7d766473df0076da_400x0.jpg","name":6,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/3da4/1b1b/a2cf/1286/12a8/83be/7d76/6473/df00/76da/3da41b1ba2cf128612a883be7d766473df0076da_1600x0.jpg"},{"url":"http://img.carcopy.ru/0961/17cc/191f/880b/49b6/3574/da12/f671/a00c/a84c/096117cc191f880b49b63574da12f671a00ca84c_400x0.jpg","name":7,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/0961/17cc/191f/880b/49b6/3574/da12/f671/a00c/a84c/096117cc191f880b49b63574da12f671a00ca84c_1600x0.jpg"},{"url":"http://img.carcopy.ru/7394/08a8/6a6d/3c29/5f97/7ed2/1c4a/bc54/300a/c4f0/739408a86a6d3c295f977ed21c4abc54300ac4f0_400x0.jpg","name":8,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/7394/08a8/6a6d/3c29/5f97/7ed2/1c4a/bc54/300a/c4f0/739408a86a6d3c295f977ed21c4abc54300ac4f0_1600x0.jpg"},{"url":"http://img.carcopy.ru/4f5f/f354/15c4/a583/1a8f/df0d/ee6d/eadf/8e6d/21b8/4f5ff35415c4a5831a8fdf0dee6deadf8e6d21b8_400x0.jpg","name":9,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/4f5f/f354/15c4/a583/1a8f/df0d/ee6d/eadf/8e6d/21b8/4f5ff35415c4a5831a8fdf0dee6deadf8e6d21b8_1600x0.jpg"},{"url":"http://img.carcopy.ru/458f/d3f6/1ee9/443d/5a92/28fb/0e8f/1929/b4e6/1788/458fd3f61ee9443d5a9228fb0e8f1929b4e61788_400x0.jpg","name":10,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/458f/d3f6/1ee9/443d/5a92/28fb/0e8f/1929/b4e6/1788/458fd3f61ee9443d5a9228fb0e8f1929b4e61788_1600x0.jpg"},{"url":"http://img.carcopy.ru/3812/d491/db92/bf97/affe/02d9/223f/0d2e/cb3c/f44d/3812d491db92bf97affe02d9223f0d2ecb3cf44d_400x0.jpg","name":11,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/3812/d491/db92/bf97/affe/02d9/223f/0d2e/cb3c/f44d/3812d491db92bf97affe02d9223f0d2ecb3cf44d_1600x0.jpg"},{"url":"http://img.carcopy.ru/ee71/bb30/10b4/1a1a/2c35/71ea/6440/be10/e065/f166/ee71bb3010b41a1a2c3571ea6440be10e065f166_400x0.jpg","name":12,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/ee71/bb30/10b4/1a1a/2c35/71ea/6440/be10/e065/f166/ee71bb3010b41a1a2c3571ea6440be10e065f166_1600x0.jpg"},{"url":"http://img.carcopy.ru/6e81/9749/50f1/9598/99fd/ae7d/0169/b0b2/2cea/e53c/6e81974950f1959899fdae7d0169b0b22ceae53c_400x0.jpg","name":13,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/6e81/9749/50f1/9598/99fd/ae7d/0169/b0b2/2cea/e53c/6e81974950f1959899fdae7d0169b0b22ceae53c_1600x0.jpg"},{"url":"http://img.carcopy.ru/d3dc/bd32/2ef3/3d46/8871/40ce/9120/9d14/365b/74e7/d3dcbd322ef33d46887140ce91209d14365b74e7_400x0.jpg","name":14,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/d3dc/bd32/2ef3/3d46/8871/40ce/9120/9d14/365b/74e7/d3dcbd322ef33d46887140ce91209d14365b74e7_1600x0.jpg"},{"url":"http://img.carcopy.ru/405b/8a97/215d/1e66/993b/3e71/b8ac/456d/3432/c7b6/405b8a97215d1e66993b3e71b8ac456d3432c7b6_400x0.jpg","name":15,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/405b/8a97/215d/1e66/993b/3e71/b8ac/456d/3432/c7b6/405b8a97215d1e66993b3e71b8ac456d3432c7b6_1600x0.jpg"},{"url":"http://img.carcopy.ru/1424/02b9/ef90/3426/b026/8fc8/110e/fb55/e816/20ea/142402b9ef903426b0268fc8110efb55e81620ea_400x0.jpg","name":16,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/1424/02b9/ef90/3426/b026/8fc8/110e/fb55/e816/20ea/142402b9ef903426b0268fc8110efb55e81620ea_1600x0.jpg"},{"url":"http://img.carcopy.ru/3494/b941/2c03/7bc5/ea6d/184c/7536/e361/dd47/e11a/3494b9412c037bc5ea6d184c7536e361dd47e11a_400x0.jpg","name":17,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/3494/b941/2c03/7bc5/ea6d/184c/7536/e361/dd47/e11a/3494b9412c037bc5ea6d184c7536e361dd47e11a_1600x0.jpg"},{"url":"http://img.carcopy.ru/5a98/a994/e555/6e9b/e014/7ae0/b15c/895d/ed89/60ad/5a98a994e5556e9be0147ae0b15c895ded8960ad_400x0.jpg","name":18,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/5a98/a994/e555/6e9b/e014/7ae0/b15c/895d/ed89/60ad/5a98a994e5556e9be0147ae0b15c895ded8960ad_1600x0.jpg"},{"url":"http://img.carcopy.ru/2ece/a697/7768/ea42/6221/3e6f/7360/cfa7/b1c0/ab1e/2ecea6977768ea4262213e6f7360cfa7b1c0ab1e_400x0.jpg","name":19,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/2ece/a697/7768/ea42/6221/3e6f/7360/cfa7/b1c0/ab1e/2ecea6977768ea4262213e6f7360cfa7b1c0ab1e_1600x0.jpg"},{"url":"http://img.carcopy.ru/cc82/6c42/a07a/c377/dd41/25b4/6316/ddde/3059/1900/cc826c42a07ac377dd4125b46316ddde30591900_400x0.jpg","name":20,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/cc82/6c42/a07a/c377/dd41/25b4/6316/ddde/3059/1900/cc826c42a07ac377dd4125b46316ddde30591900_1600x0.jpg"}]},"contacts":{"seller-phone1":{"key":"Тел","val":"+7 (487) 251-64-87 "}},"seller":{"name":"Тестовая карта","city":"Шелаболиха","address":"Южное шоссе, д. 37, лит. А"},"special":null,"highlight":null,"is-gibdd-ok":true,"last-price-change-datetime":null,"private-offer-flag":false}'
+                >
+                  <div class="credit-page__vehicle-card__image-container">
+                    <div
+                      class="credit-page__vehicle-card__image"
+                      style="
+                        background-image: url('http://img.carcopy.ru/b015/6d86/7c72/4537/ce11/67ad/45d9/8592/c103/bf36/b0156d867c724537ce1167ad45d98592c103bf36_400x0.jpg');
+                      "
+                    ></div>
+                  </div>
+                  <div class="credit-page__vehicle-card__info-container">
+                    <h4
+                      class="credit-page__vehicle-card__title"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title=""
+                      data-original-title="Toyota Camry, 2016"
+                    >
+                      Toyota Camry, 2016
+                    </h4>
+                    <p class="credit-page__vehicle-card__modification">null</p>
+                    <p class="credit-page__vehicle-card__price">1300000 руб</p>
+                  </div>
+                </article>
+                <article
+                  class="credit-page__vehicle-card"
+                  data-vehicle='{"id_vehicle":8531589,"seller_id":3322,"make":{"key":"Марка","val":"Toyota"},"make_id":66,"model":{"key":"Модель","val":"Camry"},"model_id":1724,"modification":{"key":"Модификация","val":null},"modification_id":null,"price":{"key":"Цена","val":"1270000 руб"},"price_rur":1270000,"price_eur":16046.48,"price_usd":18041.06,"category":{"key":"Категория","val":"Седан"},"body_type_id":6,"usage":{"key":"Тип","val":"подержанная"},"first_registration":{"key":"Год выпуска","val":2016},"cover":{"key":"Пробег","val":"76000 км"},"power":{"key":"Мощность","val":"181 Л.С. / 134 кВт"},"owners_number":{"key":"Число владельцев","val":2},"cubic_capacity":{"key":"Объем двиг.","val":2500},"drive":{"key":"Привод","val":"Передний"},"color":{"key":"Цвет кузова","val":"Черный"},"color_id":10,"doors":{"key":"Число дверей","val":4},"gearbox":{"key":"Коробка передач","val":"Автомат"},"fuel":{"key":"Тип двигателя","val":"Бензин"},"vin":{"key":"VIN","val":"XW7BF4FKX0S134874"},"steering-wheel":{"key":"Руль","val":"Левый"},"create_time":{"key":"Дата размещения","val":"13-05-2020"},"update_time":{"key":"Дата обновления","val":"16-06-2020"},"options":["Обогрев зеркал","Электропривод зеркал","Датчик света","Круиз-контроль","Бортовой компьютер","Центральный замок","Штатный иммобилайзер","Подушка безопасности водителя","Подушка безопасности пассажира","Подушки безопасности боковые","Подушки безопасности боковые задние","Антиблокировочная система (ABS)","Система стабилизации (ESP)","USB","AUX","Противотуманные фары","Омыватель фар"],"options_id":[100,10,317,113,112,8,20,140,444,447,446,1,24,499,500,51,55],"comments":"<p>Тойота Центр Тула (ООО СМАРТ-Т) предлагает большой выбор автомобилей с пробегом с соблюдением гарантии качества и юридической чистоты сделки.<br />Данный автомобиль возможно приобрести дистанционно с БЕСПЛАТНОЙ доставкой на дом! (в пределах г. Тула)<br />Подробную информацию вы можете получить в виде On-Line презентации автомобиля (фото и видео файлы), с помощью удобного для вас мессенджера (E-mail, Viber, WhatsApp и прочее).<br />На автомобиле был проведен комплексный осмотр и диагностика всех узлов и агрегатов, а именно:<br />- Диагностика элементов подвески и ходовой части автомобиля;<br />- Проверка работоспособности штатного и дополнительного оборудования;<br />- Проверка кузова на предмет повреждений с измерением толщины лакокрасочного покрытия;<br />- Проверка автомобиля на залог, кредит, розыск, запрет регистрационных действий, историю регистраций и участие в дорожно-транспортных происшествиях.<br />Наши автомобили проходят ПРЕДПРОДАЖНУЮ ПОДГОТОВКУ, которая включает в себя, проверку узлов и агрегатов автомобиля, а также полную химчистку салона. Наши автомобили готовы к эксплуатации с первого дня приобретения.<br />Мы предлагаем широкий спектр услуг:<br />- TRADE-IN Мы с радостью примем Ваш автомобиль в обмен на один из наших автомобилей за дополнительную скидку Для клиентов, сдающих автомобиль по программе TRADE-IN, действуют специальные условия.<br />- КРЕДИТ Позвольте себе больше с предложениями от наших банков- партнеров.<br />- СТРАХОВАНИЕ Мы сделаем Вам лучшее предложение на полисы КАСКО и ОСАГО от ведущих компаний.<br />Условия приобретения автомобиля в кредит, специальные предложения, а так же более подробную информацию по автомобилю и способу приобретения , уточняйте у менеджеров отдела продаж по телефону!&amp;nbsp;</p>","images":{"preview":{"url":"http://img.carcopy.ru/27c7/2267/402a/85e4/8224/1516/3c47/a684/38bf/1d25/27c72267402a85e4822415163c47a68438bf1d25_68x0.jpg","name":0,"width":68,"height":51},"photos":[{"url":"http://img.carcopy.ru/27c7/2267/402a/85e4/8224/1516/3c47/a684/38bf/1d25/27c72267402a85e4822415163c47a68438bf1d25_400x0.jpg","name":1,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/27c7/2267/402a/85e4/8224/1516/3c47/a684/38bf/1d25/27c72267402a85e4822415163c47a68438bf1d25_1600x0.jpg"},{"url":"http://img.carcopy.ru/c3b0/ecbc/e91e/ea5d/f1b7/7633/1e64/d944/4adf/9f0d/c3b0ecbce91eea5df1b776331e64d9444adf9f0d_400x0.jpg","name":2,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/c3b0/ecbc/e91e/ea5d/f1b7/7633/1e64/d944/4adf/9f0d/c3b0ecbce91eea5df1b776331e64d9444adf9f0d_1600x0.jpg"},{"url":"http://img.carcopy.ru/8353/4050/2ac8/1a3c/5676/3a76/b90e/5991/24a5/f6e4/835340502ac81a3c56763a76b90e599124a5f6e4_400x0.jpg","name":3,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/8353/4050/2ac8/1a3c/5676/3a76/b90e/5991/24a5/f6e4/835340502ac81a3c56763a76b90e599124a5f6e4_1600x0.jpg"},{"url":"http://img.carcopy.ru/a609/e54f/6de7/288b/56be/e30c/5304/6e87/1d31/b1d0/a609e54f6de7288b56bee30c53046e871d31b1d0_400x0.jpg","name":4,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/a609/e54f/6de7/288b/56be/e30c/5304/6e87/1d31/b1d0/a609e54f6de7288b56bee30c53046e871d31b1d0_1600x0.jpg"},{"url":"http://img.carcopy.ru/852b/6932/006b/102c/29d8/6bf0/33df/45d9/32b0/3dec/852b6932006b102c29d86bf033df45d932b03dec_400x0.jpg","name":5,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/852b/6932/006b/102c/29d8/6bf0/33df/45d9/32b0/3dec/852b6932006b102c29d86bf033df45d932b03dec_1600x0.jpg"},{"url":"http://img.carcopy.ru/5266/d418/9d83/bc1c/9945/2003/1f7f/f069/b009/fce5/5266d4189d83bc1c994520031f7ff069b009fce5_400x0.jpg","name":6,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/5266/d418/9d83/bc1c/9945/2003/1f7f/f069/b009/fce5/5266d4189d83bc1c994520031f7ff069b009fce5_1600x0.jpg"},{"url":"http://img.carcopy.ru/e1cf/a674/97f0/fd55/0a35/1b8a/871b/955b/b468/2a11/e1cfa67497f0fd550a351b8a871b955bb4682a11_400x0.jpg","name":7,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/e1cf/a674/97f0/fd55/0a35/1b8a/871b/955b/b468/2a11/e1cfa67497f0fd550a351b8a871b955bb4682a11_1600x0.jpg"},{"url":"http://img.carcopy.ru/e92b/2609/cab2/45ee/221d/be84/28f8/d041/566a/20f1/e92b2609cab245ee221dbe8428f8d041566a20f1_400x0.jpg","name":8,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/e92b/2609/cab2/45ee/221d/be84/28f8/d041/566a/20f1/e92b2609cab245ee221dbe8428f8d041566a20f1_1600x0.jpg"},{"url":"http://img.carcopy.ru/d9a2/d170/d004/04bb/4c95/1907/6dfb/5ae1/74c3/2f75/d9a2d170d00404bb4c9519076dfb5ae174c32f75_400x0.jpg","name":9,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/d9a2/d170/d004/04bb/4c95/1907/6dfb/5ae1/74c3/2f75/d9a2d170d00404bb4c9519076dfb5ae174c32f75_1600x0.jpg"},{"url":"http://img.carcopy.ru/4d52/6a82/a0d8/883a/dd04/018b/041c/2769/aa54/9346/4d526a82a0d8883add04018b041c2769aa549346_400x0.jpg","name":10,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/4d52/6a82/a0d8/883a/dd04/018b/041c/2769/aa54/9346/4d526a82a0d8883add04018b041c2769aa549346_1600x0.jpg"},{"url":"http://img.carcopy.ru/3527/0e7b/1b2e/c6af/e409/f7ae/d6b0/456d/5308/87ad/35270e7b1b2ec6afe409f7aed6b0456d530887ad_400x0.jpg","name":11,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/3527/0e7b/1b2e/c6af/e409/f7ae/d6b0/456d/5308/87ad/35270e7b1b2ec6afe409f7aed6b0456d530887ad_1600x0.jpg"},{"url":"http://img.carcopy.ru/3ed2/3d24/cc7d/cb17/69f6/cb9f/6215/e059/062f/9e3b/3ed23d24cc7dcb1769f6cb9f6215e059062f9e3b_400x0.jpg","name":12,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/3ed2/3d24/cc7d/cb17/69f6/cb9f/6215/e059/062f/9e3b/3ed23d24cc7dcb1769f6cb9f6215e059062f9e3b_1600x0.jpg"},{"url":"http://img.carcopy.ru/6789/0767/1a67/5daf/b08b/9ed1/080c/fe83/7a7b/cdf2/678907671a675dafb08b9ed1080cfe837a7bcdf2_400x0.jpg","name":13,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/6789/0767/1a67/5daf/b08b/9ed1/080c/fe83/7a7b/cdf2/678907671a675dafb08b9ed1080cfe837a7bcdf2_1600x0.jpg"},{"url":"http://img.carcopy.ru/c20e/b398/d930/7ad9/9b9e/c650/cf82/d971/cf0d/8c38/c20eb398d9307ad99b9ec650cf82d971cf0d8c38_400x0.jpg","name":14,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/c20e/b398/d930/7ad9/9b9e/c650/cf82/d971/cf0d/8c38/c20eb398d9307ad99b9ec650cf82d971cf0d8c38_1600x0.jpg"},{"url":"http://img.carcopy.ru/5de1/5701/6bda/67b6/e114/c5ff/3f87/a62f/4ea1/0627/5de157016bda67b6e114c5ff3f87a62f4ea10627_400x0.jpg","name":15,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/5de1/5701/6bda/67b6/e114/c5ff/3f87/a62f/4ea1/0627/5de157016bda67b6e114c5ff3f87a62f4ea10627_1600x0.jpg"},{"url":"http://img.carcopy.ru/dfdc/a616/825f/0634/3762/3742/4c36/51b5/dc76/13e7/dfdca616825f0634376237424c3651b5dc7613e7_400x0.jpg","name":16,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/dfdc/a616/825f/0634/3762/3742/4c36/51b5/dc76/13e7/dfdca616825f0634376237424c3651b5dc7613e7_1600x0.jpg"},{"url":"http://img.carcopy.ru/a062/ce11/de34/35fb/5218/184e/75d8/9f17/688d/90cd/a062ce11de3435fb5218184e75d89f17688d90cd_400x0.jpg","name":17,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/a062/ce11/de34/35fb/5218/184e/75d8/9f17/688d/90cd/a062ce11de3435fb5218184e75d89f17688d90cd_1600x0.jpg"},{"url":"http://img.carcopy.ru/23bc/3f57/b2c7/d9da/16d3/3d2f/9018/c30d/28f7/9d9b/23bc3f57b2c7d9da16d33d2f9018c30d28f79d9b_400x0.jpg","name":18,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/23bc/3f57/b2c7/d9da/16d3/3d2f/9018/c30d/28f7/9d9b/23bc3f57b2c7d9da16d33d2f9018c30d28f79d9b_1600x0.jpg"},{"url":"http://img.carcopy.ru/747d/715d/af4e/f983/1d2b/861c/4a4c/a0b9/319f/d236/747d715daf4ef9831d2b861c4a4ca0b9319fd236_400x0.jpg","name":19,"width":1280,"height":960,"big_url":"http://img.carcopy.ru/747d/715d/af4e/f983/1d2b/861c/4a4c/a0b9/319f/d236/747d715daf4ef9831d2b861c4a4ca0b9319fd236_1600x0.jpg"}]},"contacts":{"seller-phone1":{"key":"Тел","val":"+7 (487) 251-64-87 "}},"seller":{"name":"Тестовая карта","city":"Шелаболиха","address":"Южное шоссе, д. 37, лит. А"},"special":null,"highlight":null,"is-gibdd-ok":true,"last-price-change-datetime":null,"private-offer-flag":false}'
+                >
+                  <div class="credit-page__vehicle-card__image-container">
+                    <div
+                      class="credit-page__vehicle-card__image"
+                      style="
+                        background-image: url('http://img.carcopy.ru/27c7/2267/402a/85e4/8224/1516/3c47/a684/38bf/1d25/27c72267402a85e4822415163c47a68438bf1d25_400x0.jpg');
+                      "
+                    ></div>
+                  </div>
+                  <div class="credit-page__vehicle-card__info-container">
+                    <h4
+                      class="credit-page__vehicle-card__title"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title=""
+                      data-original-title="Toyota Camry, 2016"
+                    >
+                      Toyota Camry, 2016
+                    </h4>
+                    <p class="credit-page__vehicle-card__modification">null</p>
+                    <p class="credit-page__vehicle-card__price">1270000 руб</p>
+                  </div>
+                </article>
+                <span
+                  id="trigger-load-more"
+                  data-parameters='{"json":true,"page":1,"filter":{"make":"","model":"","gearbox":"","from_year":"","to_year":"","price_from":"","price_to":""}}'
+                  style="flex-basis: 100%;"
+                ></span>
+              </div>
+
+              <div class="credit-page__section__info-field">
+                <span class="credit-page__section__info-field__text">Найдено ТС: </span>
+                <span id="info-found-vehicles" class="credit-page__section__info-field__value"
+                  >23</span
+                >
+                <i class="fa fa-car"></i>
+              </div>
+
+              <input type="hidden" name="make" id="vehicle_make" />
+              <input type="hidden" name="model" id="vehicle_model" />
+              <input type="hidden" name="transmission" id="vehicle_transmission" />
+              <input type="hidden" name="vin" id="vehicle_vin" />
+              <input type="hidden" name="year" id="vehicle_year" />
+
+              <!-- Вперед -->
+              <button
+                disabled=""
+                class="btn btn-primary credit-page__section__forward-btn credit-page__section__forward-btn--vehicle"
+              >
+                Вперед
+              </button>
+            </section>
+
+            <!-- step 2 -->
+            <section
+              style="display: none;"
+              data-section="credit"
+              class="credit-page__section credit-page__section__credit"
+            >
+              <!-- Стоимость ТС  -->
+              <div class="form-group vehiclePrice credit-page__section__group">
+                <label for="vehicles_saleForm_vehiclePrice">
+                  Стоимость автомобиля <span class="form-required">*</span>
+                </label>
+                <input
+                  class="input-default"
+                  data-float-input="1"
+                  required="required"
+                  name="vehiclePrice"
+                  type="text"
+                  value=""
+                  id="vehicles_saleForm_vehiclePrice"
+                  data-bv-field="vehiclePrice"
+                />
+                <small
+                  class="help-block"
+                  data-bv-validator="notEmpty"
+                  data-bv-for="vehiclePrice"
+                  data-bv-result="NOT_VALIDATED"
+                  style="display: none;"
+                  >Пожалуйста, введите значение</small
+                >
+              </div>
+
+              <!-- Сумма кредита  -->
+              <div class="form-group creditAmount credit-page__section__group">
+                <label for="vehicles_saleForm_creditAmount">
+                  Сумма кредита <span class="">*</span>
+                </label>
+                <input
+                  class="input-default"
+                  readonly="readonly"
+                  data-float-input="1"
+                  name="creditAmount"
+                  type="text"
+                  value=""
+                  id="vehicles_saleForm_creditAmount"
+                />
+              </div>
+
+              <!-- Первоначальный взнос -->
+              <div
+                class="form-group initialInstalment credit-page__section__group irs-without-labels"
+              >
+                <label for="vehicles_saleForm_initialInstalment">
+                  Первоначальный взнос (руб) <span class="form-required">*</span>
+                </label>
+                <input type="text" value="500000" class="form-control input-default" /><span
+                  class="irs js-irs-1 irs-with-grid"
+                  ><span class="irs"
+                    ><span class="irs-line" tabindex="-1"
+                      ><span class="irs-line-left"></span><span class="irs-line-mid"></span
+                      ><span class="irs-line-right"></span></span
+                    ><span class="irs-min" style="display: none;">0</span
+                    ><span class="irs-max" style="display: none;">1</span
+                    ><span class="irs-from" style="visibility: hidden; display: none;">0</span
+                    ><span class="irs-to" style="visibility: hidden; display: none;">0</span
+                    ><span class="irs-single" style="display: none;">0</span></span
+                  ><span class="irs-grid"
+                    ><span class="irs-grid-pol" style="left: 0%;"></span
+                    ><span class="irs-grid-text js-grid-text-0" style="left: 0%;">0</span
+                    ><span class="irs-grid-pol small" style="left: 20%;"></span
+                    ><span class="irs-grid-pol small" style="left: 15%;"></span
+                    ><span class="irs-grid-pol small" style="left: 10%;"></span
+                    ><span class="irs-grid-pol small" style="left: 5%;"></span
+                    ><span class="irs-grid-pol" style="left: 25%;"></span
+                    ><span
+                      class="irs-grid-text js-grid-text-1"
+                      style="left: 25%; visibility: hidden;"
+                      >200 000</span
+                    ><span class="irs-grid-pol small" style="left: 45%;"></span
+                    ><span class="irs-grid-pol small" style="left: 40%;"></span
+                    ><span class="irs-grid-pol small" style="left: 35%;"></span
+                    ><span class="irs-grid-pol small" style="left: 30%;"></span
+                    ><span class="irs-grid-pol" style="left: 50%;"></span
+                    ><span
+                      class="irs-grid-text js-grid-text-2"
+                      style="left: 50%; visibility: hidden;"
+                      >400 000</span
+                    ><span class="irs-grid-pol small" style="left: 70%;"></span
+                    ><span class="irs-grid-pol small" style="left: 65%;"></span
+                    ><span class="irs-grid-pol small" style="left: 60%;"></span
+                    ><span class="irs-grid-pol small" style="left: 55%;"></span
+                    ><span class="irs-grid-pol" style="left: 75%;"></span
+                    ><span
+                      class="irs-grid-text js-grid-text-3"
+                      style="left: 75%; visibility: hidden;"
+                      >600 000</span
+                    ><span class="irs-grid-pol small" style="left: 95%;"></span
+                    ><span class="irs-grid-pol small" style="left: 90%;"></span
+                    ><span class="irs-grid-pol small" style="left: 85%;"></span
+                    ><span class="irs-grid-pol small" style="left: 80%;"></span
+                    ><span class="irs-grid-pol" style="left: 100%;"></span
+                    ><span class="irs-grid-text js-grid-text-4" style="left: 100%;"
+                      >800 000</span
+                    ></span
+                  ><span class="irs-bar"></span><span class="irs-bar-edge"></span
+                  ><span class="irs-shadow shadow-single"></span
+                  ><span class="irs-slider single"></span></span
+                ><input
+                  class="irs-hidden-input"
+                  required="required"
+                  data-range-slider="1"
+                  name="initialInstalment"
+                  type="text"
+                  value=""
+                  id="vehicles_saleForm_initialInstalment"
+                  data-bv-field="initialInstalment"
+                  readonly=""
+                />
+                <small
+                  class="help-block"
+                  data-bv-validator="notEmpty"
+                  data-bv-for="initialInstalment"
+                  data-bv-result="NOT_VALIDATED"
+                  style="display: none;"
+                  >Пожалуйста, введите значение</small
+                >
+              </div>
+
+              <!-- Желаемый срок кредита -->
+              <div class="form-group creditPeriod credit-page__section__group irs-without-labels">
+                <label for="vehicles_saleForm_creditPeriod">
+                  Желаемый срок кредита (мес) <span class="form-required">*</span>
+                </label>
+                <input type="text" value="60" class="form-control input-default" /><span
+                  class="irs js-irs-0 irs-with-grid"
+                  ><span class="irs"
+                    ><span class="irs-line" tabindex="-1"
+                      ><span class="irs-line-left"></span><span class="irs-line-mid"></span
+                      ><span class="irs-line-right"></span></span
+                    ><span class="irs-min" style="display: none;">0</span
+                    ><span class="irs-max" style="display: none;">1</span
+                    ><span class="irs-from" style="visibility: hidden; display: none;">0</span
+                    ><span class="irs-to" style="visibility: hidden; display: none;">0</span
+                    ><span class="irs-single" style="display: none;">0</span></span
+                  ><span class="irs-grid"
+                    ><span class="irs-grid-pol" style="left: 0%;"></span
+                    ><span class="irs-grid-text js-grid-text-0" style="left: 0%;">12</span
+                    ><span class="irs-grid-pol small" style="left: 8.333333333%;"></span
+                    ><span class="irs-grid-pol small" style="left: 4.166666667%;"></span
+                    ><span class="irs-grid-pol" style="left: 12.5%;"></span
+                    ><span
+                      class="irs-grid-text js-grid-text-1"
+                      style="left: 12.5%; visibility: hidden;"
+                      >18</span
+                    ><span class="irs-grid-pol small" style="left: 20.833333333%;"></span
+                    ><span class="irs-grid-pol small" style="left: 16.666666667%;"></span
+                    ><span class="irs-grid-pol" style="left: 25%;"></span
+                    ><span
+                      class="irs-grid-text js-grid-text-2"
+                      style="left: 25%; visibility: hidden;"
+                      >24</span
+                    ><span class="irs-grid-pol small" style="left: 33.333333333%;"></span
+                    ><span class="irs-grid-pol small" style="left: 29.166666667%;"></span
+                    ><span class="irs-grid-pol" style="left: 37.5%;"></span
+                    ><span
+                      class="irs-grid-text js-grid-text-3"
+                      style="left: 37.5%; visibility: hidden;"
+                      >30</span
+                    ><span class="irs-grid-pol small" style="left: 45.833333333%;"></span
+                    ><span class="irs-grid-pol small" style="left: 41.666666667%;"></span
+                    ><span class="irs-grid-pol" style="left: 50%;"></span
+                    ><span class="irs-grid-text js-grid-text-4" style="left: 50%;">36</span
+                    ><span class="irs-grid-pol small" style="left: 58.333333333%;"></span
+                    ><span class="irs-grid-pol small" style="left: 54.166666667%;"></span
+                    ><span class="irs-grid-pol" style="left: 62.5%;"></span
+                    ><span
+                      class="irs-grid-text js-grid-text-5"
+                      style="left: 62.5%; visibility: hidden;"
+                      >42</span
+                    ><span class="irs-grid-pol small" style="left: 70.833333333%;"></span
+                    ><span class="irs-grid-pol small" style="left: 66.666666667%;"></span
+                    ><span class="irs-grid-pol" style="left: 75%;"></span
+                    ><span
+                      class="irs-grid-text js-grid-text-6"
+                      style="left: 75%; visibility: hidden;"
+                      >48</span
+                    ><span class="irs-grid-pol small" style="left: 83.333333333%;"></span
+                    ><span class="irs-grid-pol small" style="left: 79.166666667%;"></span
+                    ><span class="irs-grid-pol" style="left: 87.5%;"></span
+                    ><span
+                      class="irs-grid-text js-grid-text-7"
+                      style="left: 87.5%; visibility: hidden;"
+                      >54</span
+                    ><span class="irs-grid-pol small" style="left: 95.833333333%;"></span
+                    ><span class="irs-grid-pol small" style="left: 91.666666667%;"></span
+                    ><span class="irs-grid-pol" style="left: 100%;"></span
+                    ><span class="irs-grid-text js-grid-text-8" style="left: 100%;">60</span></span
+                  ><span class="irs-bar"></span><span class="irs-bar-edge"></span
+                  ><span class="irs-shadow shadow-single"></span
+                  ><span class="irs-slider single"></span></span
+                ><input
+                  class="irs-hidden-input"
+                  required="required"
+                  data-range-slider="1"
+                  name="creditPeriod"
+                  type="text"
+                  value=""
+                  id="vehicles_saleForm_creditPeriod"
+                  data-bv-field="creditPeriod"
+                  readonly=""
+                />
+                <small
+                  class="help-block"
+                  data-bv-validator="notEmpty"
+                  data-bv-for="creditPeriod"
+                  data-bv-result="NOT_VALIDATED"
+                  style="display: none;"
+                  >Пожалуйста, введите значение</small
+                >
+              </div>
+
+              <!-- Назад -->
+              <button class="btn btn-primary credit-page__section__back-btn">Назад</button>
+
+              <div class="credit-page__section__info-field monthly">
+                <span class="credit-page__section__info-field__text">Ежемесячный платеж: </span>
+                <span id="info-monthly" class="credit-page__section__info-field__value"
+                  >14 384</span
+                >
+                <i class="fa fa-rub"></i>
+              </div>
+
+              <!-- Вперед -->
+              <button
+                class="btn btn-primary credit-page__section__forward-btn credit-page__section__forward-btn--credit"
+              >
+                Вперед
+              </button>
+            </section>
+
+            <!-- step 3 -->
+            <section
+              style="display: none;"
+              data-section="personal"
+              class="credit-page__section credit-page__section__personal"
+            >
+              <!-- Имя -->
+              <div class="form-group name credit-page__section__group">
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <i class="fa fa-user"></i>
+                  </span>
+                  <input
+                    class="input-default"
+                    required="required"
+                    name="name"
+                    type="text"
+                    value=""
+                    id="vehicles_saleForm_name"
+                    data-bv-field="name"
+                    placeholder="Ваше имя"
+                  />
+                </div>
+                <small
+                  class="help-block"
+                  data-bv-validator="notEmpty"
+                  data-bv-for="name"
+                  data-bv-result="NOT_VALIDATED"
+                  style="display: none;"
+                  >Пожалуйста, введите значение</small
+                >
+              </div>
+
+              <!-- Дата рождения -->
+              <div class="form-group birthday credit-page__section__group">
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                  </span>
+                  <input
+                    class="input-default"
+                    required="required"
+                    pattern="\d{2}\.\d{2}\.\d{4}"
+                    data-date-picker="1"
+                    autocomplete="off"
+                    name="birthday"
+                    type="text"
+                    value=""
+                    id="vehicles_saleForm_birthday"
+                    data-bv-field="birthday"
+                    placeholder="Дата рождения"
+                  />
+                </div>
+                <small
+                  class="help-block"
+                  data-bv-validator="notEmpty"
+                  data-bv-for="birthday"
+                  data-bv-result="NOT_VALIDATED"
+                  style="display: none;"
+                  >Пожалуйста, введите значение</small
+                ><small
+                  class="help-block"
+                  data-bv-validator="regexp"
+                  data-bv-for="birthday"
+                  data-bv-result="NOT_VALIDATED"
+                  style="display: none;"
+                  >Пожалуйста, введите значение соответствующее шаблону</small
+                >
+              </div>
+
+              <!-- Регион постоянной регистрации -->
+              <div class="form-group registration credit-page__section__group">
+                <div class="">
+                  <div class="input-group">
+                    <div class="c-select">
+                      <input type="hidden" value="0" id="" name="regionOfRegistration" />
+                      <div class="c-select__wrapper">
+                        <div class="c-select__field">
+                          <div data-amount="" class="c-select__value">
+                            <div class="c-select__value-wrapper">
+                              <span class="placeholder">Регион постоянной регистрации</span>
+                              <span class="value"></span>
+                            </div>
+                          </div>
+                          <div class="c-select__control">
+                            <img src="./img/arrow-black-g.svg" alt=">" class="c-select__icon" />
+                          </div>
+                        </div>
+                        <ul class="c-select__list">
+                          <li class="c-select__item c-select__item_selectable">
+                            Москва
+                          </li>
+                          <li class="c-select__item c-select__item_selectable">
+                            Санкт-Петербург
+                          </li>
+                          <li class="c-select__item c-select__item_selectable">
+                            Московская область
+                          </li>
+                          <li class="c-select__item c-select__item_selectable">
+                            Адыгея Республика
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <small
+                  class="help-block"
+                  data-bv-validator="notEmpty"
+                  data-bv-for="regionOfRegistration"
+                  data-bv-result="NOT_VALIDATED"
+                  style="display: none;"
+                  >Пожалуйста, введите значение</small
+                >
+              </div>
+
+              <!-- Телефон -->
+              <div class="form-group phone credit-page__section__group">
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <i class="fa fa-phone"></i>
+                  </span>
+                  <input
+                    class="input-default"
+                    required="required"
+                    data-phone-mask="1"
+                    name="phone"
+                    type="text"
+                    value=""
+                    id="vehicles_saleForm_phone"
+                    data-bv-field="phone"
+                    placeholder="Телефон"
+                  />
+                </div>
+                <small
+                  class="help-block"
+                  data-bv-validator="notEmpty"
+                  data-bv-for="phone"
+                  data-bv-result="NOT_VALIDATED"
+                  style="display: none;"
+                  >Пожалуйста, введите значение</small
+                >
+              </div>
+
+              <!-- Дополнительно -->
+              <div class="form-group credit-page__section__group credit-page__section__message">
+                <textarea
+                  class="credit-page__section__textform input-default"
+                  rows="4"
+                  name="comments"
+                  id="vehicles_saleForm_comments"
+                  placeholder="Дополнительно"
+                ></textarea>
+              </div>
+
+              <div class="credit-page__section__warnings">
+                <!-- Captch warning -->
+                <p class="credit-page__section__warnings--captcha" style="display: none;">
+                  Пройдите верификацию используя reCaptcha перед отправкой формы.
+                </p>
+
+                <!-- Ошибка сохранения формы -->
+                <p class="credit-page__section__warnings--submit">
+                  При отправлении формы произошла ошибка. Попробуйте повторить позднее.
+                </p>
+              </div>
+
+              <!-- Google Captcha -->
+              <div
+                class="credit-page__section__captcha"
+                id="g-recaptcha"
+                data-sitekey="6LdEsjkUAAAAAABV1_POmgt0l5XOOkeG49j_sgJo"
+              >
+                <div style="width: 304px; height: 78px;">
+                  <div>
+                    <iframe
+                      src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LdEsjkUAAAAAABV1_POmgt0l5XOOkeG49j_sgJo&amp;co=aHR0cDovL2hlbGFib2xpa2hhLmNvbS5zd3Rlc3QucnU6ODA.&amp;hl=ru&amp;v=2diXFiiA9NsPIBTU15LG6xPf&amp;theme=light&amp;size=normal&amp;cb=92omf9xyoxv"
+                      width="304"
+                      height="78"
+                      role="presentation"
+                      name="a-g6578mtl6f3h"
+                      frameborder="0"
+                      scrolling="no"
+                      sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"
+                    ></iframe>
+                  </div>
+                  <textarea
+                    id="g-recaptcha-response"
+                    name="g-recaptcha-response"
+                    class="g-recaptcha-response"
+                    style="
+                      width: 250px;
+                      height: 40px;
+                      border: 1px solid rgb(193, 193, 193);
+                      margin: 10px 25px;
+                      padding: 0px;
+                      resize: none;
+                      display: none;
+                    "
+                  ></textarea>
+                </div>
+              </div>
+
+              <!-- Назад -->
+              <button class="btn btn-primary credit-page__section__back-btn">Назад</button>
+
+              <!-- Кнопка отправки формы -->
+              <button
+                data-disable="false"
+                class="btn btn-primary credit-page__section__submit-btn btn_accent"
+                name="submit"
+                type="submit"
+                value="Отправить"
+                id="vehicles_saleForm_submit"
+              >
+                Отправить
+              </button>
+            </section>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <footer>
+      <div class="b-footer__container">
+        <div class="b-footer__content">
+          <div class="b-footer__logo">
+            <img
+              class="b-header__logo"
+              src="https://st2.depositphotos.com/1768926/12401/v/950/depositphotos_124010434-stock-illustration-car-logo-auto-symbol-and.jpg"
+              alt="logo"
+            />
+          </div>
+          <div class="b-footer__block">
+            <div class="widget widget_contacts">
+              <h3 class="widget-title"><span>Контакты </span></h3>
+              <div class="row">
+                <ul class="contacts-list">
+                  <li class="phone">
+                    <img class="icon" src="./img/phone.svg" alt="phone" />
+                    <a href="tel:+7(921) 631-32-07">+7(921) 631-32-07</a>
+                    <span class="time">, c 09:00 до 21:00</span>
+                  </li>
+                  <li class="address">
+                    <img class="icon" src="./img/compass2.svg" alt="map" />
+                    Южное шоссе, д. 37, лит. А
+                  </li>
+                  <li class="phone">
+                    <img class="icon" src="./img/envelop.svg" alt="email" />
+                    expromtom@yandex.ru
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <ul class="b-footer__links">
+              <li>
+                <a class="b-footer__link" href="#">Карта сайта</a>
+              </li>
+              <li>
+                <span class="b-footer__link" @click="showAgree">Дополнительная информация</span>
+              </li>
+              <li>
+                <a class="b-footer__link" href="#" target="_blank">Политика</a>
+              </li>
+            </ul>
+
+            <p class="developed">
+              <span>Создано</span>
+              <a href="http://carcopy.ru" target="_blank"
+                ><img src="./img/logo-cc.png" width="50"
+              /></a>
+              <span class="">© 2020</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- modal обратный звонок -->
+    <div
+      id="callback-form"
+      class="request-form fade in"
+      role="dialog"
+      aria-hidden="false"
+      style="display: none;"
+    >
+      <div data-scroll-lock-scrollable="" class="request-form__wrapper">
+        <div class="request-form__close">
+          ×
+        </div>
+        <div class="request-form__title">
+          Обратный звонок
+        </div>
+        <form action="/#wpcf7-f136-o1" method="post">
+          <div class="request-form__input">
+            <input
+              data-vv-as="«Имя»"
+              type="text"
+              name="name1"
+              placeholder="Ваше имя"
+              class="input-default"
+            />
+          </div>
+          <div class="request-form__input">
+            <input
+              data-vv-as="«Телефон»"
+              type="text"
+              name="phone"
+              placeholder="+7 (___) ___-__-__"
+              class="input-default"
+            />
+          </div>
+          <div class="request-form__fields">
+            <div class="request-form__col">
+              <div class="request-form__submit">
+                <input type="submit" value="Заказать звонок" class="btn btn_accent" />
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- / modal callback -->
+
+    <script src="./mock-data.js"></script>
+    <script src="./main-script.js"></script>
+  </body>
+</html>

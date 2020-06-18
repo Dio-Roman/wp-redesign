@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AvtoSite</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./main-style.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <header class="b-header">
+      <div ref="headerLine" class="b-header__top">
+        <div class="b-header__container">
+          <div class="b-header__top-content">
+            <div class="b-header__addresses">
+              <div class="address-line">
+                <a class="address-line__item" href="#">
+                  <span class="address-line__icon icon">
+                    <img class="icon" src="./img/location.svg" alt="geo" />
+                  </span>
+                  <div class="address-line__text">Руставели 53</div>
+                </a>
+                <a class="address-line__item" href="#">
+                  <span class="address-line__icon"
+                    ><img class="icon" src="./img/location.svg" alt="geo"
+                  /></span>
+                  <div class="address-line__text">Торфяная дорога 8/3</div>
+                </a>
+                <a class="address-line__item" href="#">
+                  <span class="address-line__icon"
+                    ><img class="icon" src="./img/location.svg" alt="geo"
+                  /></span>
+                  <div class="address-line__text">пр. Непокоренных, д.47</div>
+                </a>
+
+                <!-- <a class="address-line__item" href="#">
+                  <div class="address-line__text">О компании</div>
+                </a> -->
+              </div>
+            </div>
+            <div class="b-header__callback">
+              <div id="callback" class="callback-button">
+                <span class="callback-button__icon">
+                  <img src="./img/phone1.svg" alt="callback" />
+                </span>
+                <div class="callback-button__text">Обратный звонок</div>
+              </div>
+              <a class="b-header__phone" href="tel:+78121111111">
+                +7 (812) 111-11-11
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="b-header__menu">
+        <div class="b-header__container">
+          <div class="b-header__menu-content">
+            <a class="b-header__logo-wrapper" href="index.html">
+              <img
+                class="b-header__logo"
+                src="https://st2.depositphotos.com/1768926/12401/v/950/depositphotos_124010434-stock-illustration-car-logo-auto-symbol-and.jpg"
+                alt="logo"
+              />
+            </a>
+
+            <nav class="b-header__nav">
+              <ul>
+                <li class="">
+                  <a href="#">Авто в наличии</a>
+                </li>
+                <li class="">
+                  <a href="vykup.html">Выкуп</a>
+                </li>
+                <li class="">
+                  <a href="kredit.html">Кредит</a>
+                </li>
+                <li class="">
+                  <a href="kontakty.html">Контакты</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <request-form ref="requestForm" agreement_link="#"></request-form>
+    </header>
+    <section class="m-header" style="padding: 0px;">
+      <div class="m-header__top-wrapper m-header__top-wrapper_return">
+        <div class="m-menu" style="display: none;">
+          <div class="m-menu__wrapper">
+            <div class="m-menu__content">
+              <div data-scroll-lock-scrollable="" class="m-menu__plague">
+                <nav class="m-menu__list">
+                  <ul class="m-menu__ul">
+                    <li class="m-menu__item">
+                      <a href="#" target="_self">Авто в наличии</a>
+                    </li>
+                    <li class="m-menu__item">
+                      <a href="#" target="_self">Выкуп</a>
+                    </li>
+                    <li class="m-menu__item">
+                      <a href="#" target="_self">Кредит</a>
+                    </li>
+                    <li class="m-menu__item">
+                      <a href="#" target="_self">Контакты</a>
+                    </li>
+                    
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="m-header__container">
+          <div class="m-header__top">
+            <a href="#" class="m-header__logo-wrapper"
+              ><img
+                src="#"
+                alt=""
+                class="m-header__logo"
+            /></a>
+            <div class="m-header__phone"><a href="tel:+7812777777">+7 (812) 777-77-77</a></div>
+            <div class="m-header__menu">
+              <div class="c-hamb" id="hamb"><span></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="m-header__nav">
+        <nav class="m-header__container">
+          <ul>
+            <li><a href="#">Авто в наличии</a></li>
+            <li><a href="#">Выкуп</a></li>
+            <li><a href="#">Кредит</a></li>
+            <li><a href="#">Контакты</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+    <main class="b-content">
+      <div id="home-page">
+        <section class="b-hero">
+          <div class="b-hero__container">
+            <div class="b-hero__wrapper">
+              <div class="b-hero__content">
+                --- АКЦИИ / РЕКЛАММА ---
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="b-filter b-filter_home">
+          <div class="b-filter__container">
+            <div class="b-filter__header">
+              <div class="header-border">
+                <div>
+                  <span><b>742</b> авто в наличии</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Фильтр -->
+            <div class="b-filter__wrapper">
+              <form action="/" method="get">
+                <div class="b-filter__row">
+                  <div class="b-filter__field">
+                    <div class="double-input">
+                      <div class="c-select">
+                        <input type="hidden" value="0" id="wpcci-make" name="filter[make]" />
+                        <div class="c-select__wrapper">
+                          <div class="c-select__field">
+                            <div class="c-select__value c-select__value_safety">
+                              <span class="placeholder">Марка</span>
+                              <span class="value"></span>
+                            </div>
+                          </div>
+                          <div class="c-select__control">
+                            <img src="./img/arrow-black-g.svg" alt=">" class="c-select__icon" />
+                          </div>
+                          <ul class="c-select__list">
+                            <li class="c-select__item c-select__item_reset">
+                              Любая
+                            </li>
+                            <li class="c-select__item" style="">
+                              Acura
+                            </li>
+                            <li class="c-select__item" style="">
+                              Bmw
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div class="c-select disabled">
+                        <input type="hidden" value="0" id="wpcci-model" name="filter[model]" />
+                        <div class="c-select__wrapper">
+                          <div class="c-select__field">
+                            <div class="c-select__value c-select__value_safety">
+                              <span class="placeholder">Модель</span>
+                              <span class="value"></span>
+                            </div>
+                          </div>
+                          <div class="c-select__control">
+                            <img src="./img/arrow-black-g.svg" alt=">" class="c-select__icon" />
+                          </div>
+                          <ul class="c-select__list">
+                            <li class="c-select__item c-select__item_reset">
+                              Любая
+                            </li>
+                            <li class="c-select__item" style="display: none;">
+                              All
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="b-filter__field">
+                    <div class="double-input">
+                      <div class="c-select">
+                        <input
+                          type="hidden"
+                          value="0"
+                          id="wpcci-from-year"
+                          name="filter[from_year]"
+                        />
+                        <div class="c-select__wrapper">
+                          <div class="c-select__field">
+                            <div class="c-select__value c-select__value_safety">
+                              <span class="placeholder">Год от</span>
+                              <span class="value"></span>
+                            </div>
+                          </div>
+                          <div class="c-select__control">
+                            <img src="./img/arrow-black-g.svg" alt=">" class="c-select__icon" />
+                          </div>
+                          <ul class="c-select__list">
+                            <li class="c-select__item c-select__item_reset">
+                              Любой
+                            </li>
+                            <li class="c-select__item" style="">
+                              2020
+                            </li>
+                            <li class="c-select__item" style="">
+                              2019
+                            </li>
+                            <li class="c-select__item">
+                              2018
+                            </li>
+                            <li class="c-select__item">
+                              2017
+                            </li>
+                            <li class="c-select__item">
+                              2016
+                            </li>
+                            <li class="c-select__item">
+                              2015
+                            </li>
+                            <li class="c-select__item">
+                              2014
+                            </li>
+                            <li class="c-select__item">
+                              2013
+                            </li>
+                            <li class="c-select__item">
+                              2012
+                            </li>
+                            <li class="c-select__item">
+                              2011
+                            </li>
+                            <li class="c-select__item">
+                              2010
+                            </li>
+                            <li class="c-select__item">
+                              2009
+                            </li>
+                            <li class="c-select__item">
+                              2008
+                            </li>
+                            <li class="c-select__item">
+                              2007
+                            </li>
+                            <li class="c-select__item">
+                              2006
+                            </li>
+                            <li class="c-select__item">
+                              2005
+                            </li>
+                            <li class="c-select__item">
+                              2004
+                            </li>
+                            <li class="c-select__item">
+                              2003
+                            </li>
+                            <li class="c-select__item">
+                              2002
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div class="c-select">
+                        <input type="hidden" value="0" id="wpcci-to-year" name="filter[to_year]" />
+                        <div class="c-select__wrapper">
+                          <div class="c-select__field">
+                            <div class="c-select__value c-select__value_safety">
+                              <span class="placeholder">до</span>
+                              <span class="value"></span>
+                            </div>
+                          </div>
+                          <div class="c-select__control">
+                            <img src="./img/arrow-black-g.svg" alt=">" class="c-select__icon" />
+                          </div>
+                          <ul class="c-select__list">
+                            <li class="c-select__item c-select__item_reset">
+                              Любой
+                            </li>
+                            <li class="c-select__item" style="">
+                              2020
+                            </li>
+                            <li class="c-select__item" style="">
+                              2019
+                            </li>
+                            <li class="c-select__item">
+                              2018
+                            </li>
+                            <li class="c-select__item">
+                              2017
+                            </li>
+                            <li class="c-select__item">
+                              2016
+                            </li>
+                            <li class="c-select__item">
+                              2015
+                            </li>
+                            <li class="c-select__item">
+                              2014
+                            </li>
+                            <li class="c-select__item">
+                              2013
+                            </li>
+                            <li class="c-select__item">
+                              2012
+                            </li>
+                            <li class="c-select__item">
+                              2011
+                            </li>
+                            <li class="c-select__item">
+                              2010
+                            </li>
+                            <li class="c-select__item">
+                              2009
+                            </li>
+                            <li class="c-select__item">
+                              2008
+                            </li>
+                            <li class="c-select__item">
+                              2007
+                            </li>
+                            <li class="c-select__item">
+                              2006
+                            </li>
+                            <li class="c-select__item">
+                              2005
+                            </li>
+                            <li class="c-select__item">
+                              2004
+                            </li>
+                            <li class="c-select__item">
+                              2003
+                            </li>
+                            <li class="c-select__item">
+                              2002
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="b-filter__field">
+                    <div class="">
+                      <div class="c-select">
+                        <input type="hidden" value="0" id="wpcci-gearbox" name="filter[gearbox]" />
+                        <div class="c-select__wrapper">
+                          <div class="c-select__field">
+                            <div data-amount="" class="c-select__value">
+                              <div class="c-select__value-wrapper">
+                                <span class="placeholder">Тип КПП</span>
+                                <span class="value"></span>
+                              </div>
+                            </div>
+                            <div class="c-select__control">
+                              <img src="./img/arrow-black-g.svg" alt=">" class="c-select__icon" />
+                            </div>
+                          </div>
+                          <ul class="c-select__list">
+                            <li
+                              class="c-select__item c-select__item_reset c-select__item_selectable c-select__item_selectable_reset"
+                            >
+                              Любой
+                            </li>
+                            <li class="c-select__item c-select__item_selectable">
+                              Автомат
+                            </li>
+                            <li class="c-select__item c-select__item_selectable">
+                              Вариатор
+                            </li>
+                            <li class="c-select__item c-select__item_selectable">
+                              Механика
+                            </li>
+                            <li class="c-select__item c-select__item_selectable">
+                              Робот
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="b-filter__field">
+                    <div class="double-input double-input_inseverable">
+                      <input
+                        type="text"
+                        id="wpcci-start-price"
+                        name="filter[price_from]"
+                        placeholder="Цена от, ₽"
+                        class="input-default filter__price"
+                      />
+                      <input
+                        type="text"
+                        id="wpcci-end-price"
+                        name="filter[price_to]"
+                        placeholder="до"
+                        class="input-default filter__price"
+                      />
+                    </div>
+                  </div>
+                  <div class="b-filter__field">
+                    <input
+                      type="submit"
+                      name="filter[search]"
+                      value="Начать поиск"
+                      class="btn btn_accent b-filter__btn"
+                    />
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <!-- АВТОМОБИЛИ ПО МАРКАМ -->
+        <section class="widget widget_makes b-brands">
+          <div class="b-brands__container">
+            <div class="b-brands__wrapper">
+              <ul class="categories b-brands__list">
+                <li class="make-item b-brands__item">
+                  <a href="/?filter[make]=7"> <span>BMW</span><span>10</span> </a>
+                </li>
+                <li class="make-item b-brands__item">
+                  <a href="#"> <span>Audi</span><span>34</span> </a>
+                </li>
+                <li class="make-item b-brands__item">
+                  <a href="#"> <span>Kia</span><span>47</span> </a>
+                </li>
+                <li class="make-item b-brands__item">
+                  <a href="#"> <span>LADA</span><span>447</span> </a>
+                </li>
+                <li class="make-item b-brands__item">
+                  <a href="#"> <span>Renault</span><span>977</span> </a>
+                </li>
+                <li class="make-item b-brands__item">
+                  <a href="#"> <span>VW</span><span>797</span> </a>
+                </li>
+                <li class="make-item b-brands__item">
+                  <a href="#"> <span>Volvo</span><span>87</span> </a>
+                </li>
+                <li class="make-item b-brands__item">
+                  <a href="#"> <span>Porsche</span><span>7</span> </a>
+                </li>
+                <li class="make-item b-brands__item">
+                  <a href="#"> <span>Volvo</span><span>87</span> </a>
+                </li>
+                <li class="make-item b-brands__item">
+                  <a href="#"> <span>Porsche</span><span>7</span> </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Новые поступления -->
+        <section class="b-stock">
+          <div class="b-stock__container">
+            <div class="b-stock__header">
+              <div class="header-border header-border_visible header-border_accent">
+                <div><span>Новые поступления</span></div>
+              </div>
+            </div>
+
+            <div class="b-stock__list b-stock__list_grid">
+              <a href="#" class="car-card">
+                <div class="car-card__preview">
+                  <div class="car-card__pics">
+                    <img src="img/car.jpg" alt="Kia, Soul" data-id="0" class="active" />
+                    <img src="img/car1.jpg" alt="Kia, Soul" data-id="1" class="hide" />
+                    <img src="img/car2.jpg" alt="Kia, Soul" data-id="2" class="hide" />
+                    <img src="img/car3.jpg" alt="Kia, Soul" data-id="3" class="hide" />
+                    <img src="img/car4.jpg" alt="Kia, Soul" data-id="4" class="hide" />
+                  </div>
+
+                  <span>
+                    <i data-id="0" class="active"></i>
+                    <i data-id="1" class=""></i>
+                    <i data-id="2" class=""></i>
+                    <i data-id="3" class=""></i>
+                    <i data-id="4" class=""> </i>
+                  </span>
+                </div>
+
+                <div class="car-card__content">
+                  <div class="car-card__base">
+                    <div class="car-card__title">
+                      Kia Soul
+                    </div>
+                    <div class="car-card__params">
+                      <div class="car-card__param">
+                        Автомат / 1.6 л /
+                        <br />123 л.с. / Бензин / <br />2014, 82 290 км
+                      </div>
+                      <div class="car-card__param">Красный хетчбэк <br />Руставели 53</div>
+                    </div>
+                  </div>
+                  <div class="car-card__addition">
+                    <div class="car-card__buy-params">
+                      <div class="car-card__price"><span>829 000 ₽</span></div>
+                      <!---->
+                    </div>
+                    <div class="car-card__control">
+                      <!--
+                                    <div class="btn car-card__btn">
+                                    Оставить заявку
+                                  </div> 
+                                  
+                                  <div class="control-buttons"><div class="control-buttons__btn control-buttons__btn_favorite"><svg><use xlink:href="#hearth-i"></use></svg></div></div>
+                                  -->
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="car-card">
+                <div class="car-card__preview">
+                  <div class="car-card__pics">
+                    <img src="img/car.jpg" alt="Kia, Soul" data-id="0" class="active" />
+                    <img src="img/car1.jpg" alt="Kia, Soul" data-id="1" class="hide" />
+                    <img src="img/car2.jpg" alt="Kia, Soul" data-id="2" class="hide" />
+                    <img src="img/car3.jpg" alt="Kia, Soul" data-id="3" class="hide" />
+                    <img src="img/car4.jpg" alt="Kia, Soul" data-id="4" class="hide" />
+                  </div>
+
+                  <span>
+                    <i data-id="0" class="active"></i>
+                    <i data-id="1" class=""></i>
+                    <i data-id="2" class=""></i>
+                    <i data-id="3" class=""></i>
+                    <i data-id="4" class=""> </i>
+                  </span>
+                </div>
+
+                <div class="car-card__content">
+                  <div class="car-card__base">
+                    <div class="car-card__title">
+                      Kia Soul
+                    </div>
+                    <div class="car-card__params">
+                      <div class="car-card__param">
+                        Автомат / 1.6 л /
+                        <br />123 л.с. / Бензин / <br />2014, 82 290 км
+                      </div>
+                      <div class="car-card__param">Красный хетчбэк <br />Руставели 53</div>
+                    </div>
+                  </div>
+                  <div class="car-card__addition">
+                    <div class="car-card__buy-params">
+                      <div class="car-card__price"><span>829 000 ₽</span></div>
+                      <!---->
+                    </div>
+                    <div class="car-card__control">
+                      <!--
+                                    <div class="btn car-card__btn">
+                                    Оставить заявку
+                                  </div> 
+                                  
+                                  <div class="control-buttons"><div class="control-buttons__btn control-buttons__btn_favorite"><svg><use xlink:href="#hearth-i"></use></svg></div></div>
+                                  -->
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="car-card">
+                <div class="car-card__preview">
+                  <div class="car-card__pics">
+                    <img src="img/car.jpg" alt="Kia, Soul" data-id="0" class="active" />
+                    <img src="img/car1.jpg" alt="Kia, Soul" data-id="1" class="hide" />
+                    <img src="img/car2.jpg" alt="Kia, Soul" data-id="2" class="hide" />
+                    <img src="img/car3.jpg" alt="Kia, Soul" data-id="3" class="hide" />
+                    <img src="img/car4.jpg" alt="Kia, Soul" data-id="4" class="hide" />
+                  </div>
+
+                  <span>
+                    <i data-id="0" class="active"></i>
+                    <i data-id="1" class=""></i>
+                    <i data-id="2" class=""></i>
+                    <i data-id="3" class=""></i>
+                    <i data-id="4" class=""> </i>
+                  </span>
+                </div>
+
+                <div class="car-card__content">
+                  <div class="car-card__base">
+                    <div class="car-card__title">
+                      Kia Soul
+                    </div>
+                    <div class="car-card__params">
+                      <div class="car-card__param">
+                        Автомат / 1.6 л /
+                        <br />123 л.с. / Бензин / <br />2014, 82 290 км
+                      </div>
+                      <div class="car-card__param">Красный хетчбэк <br />Руставели 53</div>
+                    </div>
+                  </div>
+                  <div class="car-card__addition">
+                    <div class="car-card__buy-params">
+                      <div class="car-card__price"><span>829 000 ₽</span></div>
+                      <!---->
+                    </div>
+                    <div class="car-card__control">
+                      <!--
+                                    <div class="btn car-card__btn">
+                                    Оставить заявку
+                                  </div> 
+                                  
+                                  <div class="control-buttons"><div class="control-buttons__btn control-buttons__btn_favorite"><svg><use xlink:href="#hearth-i"></use></svg></div></div>
+                                  -->
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!--
+                  <div class="b-stock__button b-stock__button_home">
+                      <div class="b-stock__button-wrapper">
+                          <a class="btn btn_second" href="#">Смотреть все</a>
+                      </div>
+                  </div>
+                  -->
+          </div>
+        </section>
+
+        <!-- Наши преимущества -->
+        <section class="b-info-plague">
+          <div class="b-info-plague__container">
+            <div class="b-info-plague__wrapper">
+              <div class="b-info-plague__content">
+                <h1>Наши преимущества</h1>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure facere eaque
+                  ducimus pariatur consequatur alias unde deserunt corrupti. Eveniet enim sed vero
+                  tenetur aut? Veritatis laudantium officia autem voluptate.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Дополнительные возможности -->
+        <section class="b-richtext">
+          <div class="b-richtext__container">
+            <div class="b-richtext__content">
+              <h1>Дополнительные возможности</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa perspiciatis quia
+                atque magni odio illum eius similique, vel consequuntur porro libero commodi unde et
+                sunt minus laboriosam. Quaerat, dolores blanditiis.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="b-footer__container">
+        <div class="b-footer__content">
+          <div class="b-footer__logo">
+            <img
+              class="b-header__logo"
+              src="https://st2.depositphotos.com/1768926/12401/v/950/depositphotos_124010434-stock-illustration-car-logo-auto-symbol-and.jpg"
+              alt="logo"
+            />
+          </div>
+          <div class="b-footer__block">
+            <div class="widget widget_contacts">
+              <h3 class="widget-title"><span>Контакты </span></h3>
+              <div class="row">
+                <ul class="contacts-list">
+                  <li class="phone">
+                    <img class="icon" src="./img/phone.svg" alt="phone" />
+                    <a href="tel:+7(921) 631-32-07">+7(921) 631-32-07</a>
+                    <span class="time">, c 09:00 до 21:00</span>
+                  </li>
+                  <li class="address">
+                    <img class="icon" src="./img/compass2.svg" alt="map" />
+                    Южное шоссе, д. 37, лит. А
+                  </li>
+                  <li class="phone">
+                    <img class="icon" src="./img/envelop.svg" alt="email" />
+                    expromtom@yandex.ru
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <ul class="b-footer__links">
+              <li>
+                <a class="b-footer__link" href="#">Карта сайта</a>
+              </li>
+              <li>
+                <span class="b-footer__link" @click="showAgree">Дополнительная информация</span>
+              </li>
+              <li>
+                <a class="b-footer__link" href="#" target="_blank">Политика</a>
+              </li>
+            </ul>
+
+            <p class="developed">
+              <span>Создано</span>
+              <a href="http://carcopy.ru" target="_blank"><img src="./img/logo-cc.png" /></a>
+              <span class="">© 2020</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- modal обратный звонок -->
+    <div
+      id="callback-form"
+      class="request-form fade in"
+      role="dialog"
+      aria-hidden="false"
+      style="display: none;"
+    >
+      <div data-scroll-lock-scrollable="" class="request-form__wrapper">
+        <div class="request-form__close">
+          ×
+        </div>
+        <div class="request-form__title">
+          Обратный звонок
+        </div>
+        <form action="/#wpcf7-f136-o1" method="post">
+          <div class="request-form__input">
+            <input
+              data-vv-as="«Имя»"
+              type="text"
+              name="name1"
+              placeholder="Ваше имя"
+              class="input-default"
+            />
+          </div>
+          <div class="request-form__input">
+            <input
+              data-vv-as="«Телефон»"
+              type="text"
+              name="phone"
+              placeholder="+7 (___) ___-__-__"
+              class="input-default"
+            />
+          </div>
+          <div class="request-form__fields">
+            <div class="request-form__col">
+              <div class="request-form__submit">
+                <input type="submit" value="Заказать звонок" class="btn btn_accent" />
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- / modal callback -->
+
+    <script src="./mock-data.js"></script>
+    <script src="./main-script.js"></script>
+  </body>
+</html>

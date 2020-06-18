@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AvtoSite</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./main-style.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;"></script>
+    <!-- <script 
+      src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<ваш API-ключ>" 
+      type="text/javascript">
+    </script> -->
+  </head>
+  <!-- ver=4.9.15 -->
+  <body>
+    <header class="b-header">
+      <div ref="headerLine" class="b-header__top">
+        <div class="b-header__container">
+          <div class="b-header__top-content">
+            <div class="b-header__addresses">
+              <div class="address-line">
+                <a class="address-line__item" href="#">
+                  <span class="address-line__icon icon">
+                    <img class="icon" src="./img/location.svg" alt="geo" />
+                  </span>
+                  <div class="address-line__text">Руставели 53</div>
+                </a>
+                <a class="address-line__item" href="#">
+                  <span class="address-line__icon"
+                    ><img class="icon" src="./img/location.svg" alt="geo"
+                  /></span>
+                  <div class="address-line__text">Торфяная дорога 8/3</div>
+                </a>
+                <a class="address-line__item" href="#">
+                  <span class="address-line__icon"
+                    ><img class="icon" src="./img/location.svg" alt="geo"
+                  /></span>
+                  <div class="address-line__text">пр. Непокоренных, д.47</div>
+                </a>
+
+                <!-- <a class="address-line__item" href="#">
+                  <div class="address-line__text">О компании</div>
+                </a> -->
+              </div>
+            </div>
+            <div class="b-header__callback">
+              <div id="callback" class="callback-button">
+                <span class="callback-button__icon">
+                  <img src="./img/phone1.svg" alt="callback" />
+                </span>
+                <div class="callback-button__text">Обратный звонок</div>
+              </div>
+              <a class="b-header__phone" href="tel:+78121111111">
+                +7 (812) 111-11-11
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="b-header__menu">
+        <div class="b-header__container">
+          <div class="b-header__menu-content">
+            <a class="b-header__logo-wrapper" href="index.html">
+              <img
+                class="b-header__logo"
+                src="https://st2.depositphotos.com/1768926/12401/v/950/depositphotos_124010434-stock-illustration-car-logo-auto-symbol-and.jpg"
+                alt="logo"
+              />
+            </a>
+
+            <nav class="b-header__nav">
+              <ul>
+                <li class="">
+                  <a href="#">Авто в наличии</a>
+                </li>
+                <li class="">
+                  <a href="vykup.html">Выкуп</a>
+                </li>
+                <li class="">
+                  <a href="kredit.html">Кредит</a>
+                </li>
+                <li class="">
+                  <a href="kontakty.html">Контакты</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <request-form ref="requestForm" agreement_link="#"></request-form>
+    </header>
+    <section class="m-header" style="padding: 0px;">
+      <div class="m-header__top-wrapper m-header__top-wrapper_return">
+        <div class="m-menu" style="display: none;">
+          <div class="m-menu__wrapper">
+            <div class="m-menu__content">
+              <div data-scroll-lock-scrollable="" class="m-menu__plague">
+                <nav class="m-menu__list">
+                  <ul class="m-menu__ul">
+                    <li class="m-menu__item">
+                      <a href="#" target="_self">Авто в наличии</a>
+                    </li>
+                    <li class="m-menu__item">
+                      <a href="#" target="_self">Выкуп</a>
+                    </li>
+                    <li class="m-menu__item">
+                      <a href="#" target="_self">Кредит</a>
+                    </li>
+                    <li class="m-menu__item">
+                      <a href="#" target="_self">Контакты</a>
+                    </li>
+                    
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="m-header__container">
+          <div class="m-header__top">
+            <a href="#" class="m-header__logo-wrapper"
+              ><img
+                src="#"
+                alt=""
+                class="m-header__logo"
+            /></a>
+            <div class="m-header__phone"><a href="tel:+7812777777">+7 (812) 777-77-77</a></div>
+            <div class="m-header__menu">
+              <div class="c-hamb" id="hamb"><span></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="m-header__nav">
+        <nav class="m-header__container">
+          <ul>
+            <li><a href="#">Авто в наличии</a></li>
+            <li><a href="#">Выкуп</a></li>
+            <li><a href="#">Кредит</a></li>
+            <li><a href="#">Контакты</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+    <main>
+      <div id="content" class="no_sidebar" style="min-height: calc((100vh - 308px) - 353px);">
+        <div class="container">
+          <div class="row">
+            <div class="">
+              <div class="main-info">
+                <div id="contact-map" class="" style="width: 65%; height: 400px;"></div>
+
+                <div class="info">
+                  <h3 class="section-title">
+                    Основная информация
+                  </h3>
+                  <p>
+                    <strong>Название автосалона</strong>
+                  </p>
+
+                  <ul class="our-contacts">
+                    <li class="address"><b>Адрес:</b> Южное шоссе, д. 37, лит. А</li>
+                    <li class="phone"><b>Телефон:</b> +7(921)631-32-07</li>
+                    <li class="email"><b>Email:</b> expromtom@yandex.ru</li>
+                    <li class="email"><b>Время работы:</b> Без выходных. 10:00 - 20:00</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="">
+                <div class="callback-form">
+                  <h3 class="section-title">
+                    Обратная связь
+                  </h3>
+                  <div role="form" class="wpcf7" id="wpcf7-f58-o1" lang="ru-RU" dir="ltr">
+                    <form
+                      action="/kontakty/#wpcf7-f58-o1"
+                      method="post"
+                      class="wpcf7-form"
+                      novalidate="novalidate"
+                    >
+                      <div>
+                        <input
+                          type="text"
+                          name="name1"
+                          value=""
+                          placeholder="Ваше имя"
+                          size="40"
+                          class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required input-default"
+                          aria-required="true"
+                          aria-invalid="false"
+                        />
+                        <input
+                          type="text"
+                          name="mail"
+                          value=""
+                          placeholder="E-mail"
+                          size="40"
+                          class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required input-default"
+                          aria-required="true"
+                          aria-invalid="false"
+                        />
+                        <input
+                          type="text"
+                          name="phone"
+                          value=""
+                          placeholder="Телефон"
+                          size="40"
+                          class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required input-default"
+                          aria-required="true"
+                          aria-invalid="false"
+                        />
+
+                        <textarea
+                          name="text"
+                          cols="40"
+                          rows="10"
+                          placeholder="Текст сообщения"
+                          class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required input-default callback-form__textarea"
+                          aria-required="true"
+                          aria-invalid="false"
+                        ></textarea>
+
+                        <input
+                          type="submit"
+                          value="Отправить"
+                          class="wpcf7-form-control wpcf7-submit btn btn-primary btn-block input-default"
+                        />
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+              <div class="about">
+                <h3 class="section-title">
+                  О компании
+                </h3>
+                Наш автосалон единственный в Шелаболихе около 10 лет (единственных конкурентов из
+                села Новообинцево мы сожгли). Самые выгодные предложения и честные ценны только у
+                нас. Наши специалисты по специальной работе специально подберут специальный
+                автомобиль специально для вас.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="b-footer__container">
+        <div class="b-footer__content">
+          <div class="b-footer__logo">
+            <img
+              class="b-header__logo"
+              src="https://st2.depositphotos.com/1768926/12401/v/950/depositphotos_124010434-stock-illustration-car-logo-auto-symbol-and.jpg"
+              alt="logo"
+            />
+          </div>
+          <div class="b-footer__block">
+            <div class="widget widget_contacts">
+              <h3 class="widget-title"><span>Контакты </span></h3>
+              <div class="row">
+                <ul class="contacts-list">
+                  <li class="phone">
+                    <img class="icon" src="./img/phone.svg" alt="phone" />
+                    <a href="tel:+7(921) 631-32-07">+7(921) 631-32-07</a>
+                    <span class="time">, c 09:00 до 21:00</span>
+                  </li>
+                  <li class="address">
+                    <img class="icon" src="./img/compass2.svg" alt="map" />
+                    Южное шоссе, д. 37, лит. А
+                  </li>
+                  <li class="phone">
+                    <img class="icon" src="./img/envelop.svg" alt="email" />
+                    expromtom@yandex.ru
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <ul class="b-footer__links">
+              <li>
+                <a class="b-footer__link" href="#">Карта сайта</a>
+              </li>
+              <li>
+                <span class="b-footer__link" @click="showAgree">Дополнительная информация</span>
+              </li>
+              <li>
+                <a class="b-footer__link" href="#" target="_blank">Политика</a>
+              </li>
+            </ul>
+
+            <p class="developed">
+              <span>Создано</span>
+              <a href="http://carcopy.ru" target="_blank"
+                ><img src="./img/logo-cc.png" width="50"
+              /></a>
+              <span class="">© 2020</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- modal обратный звонок -->
+    <div
+      id="callback-form"
+      class="request-form fade in"
+      role="dialog"
+      aria-hidden="false"
+      style="display: none;"
+    >
+      <div data-scroll-lock-scrollable="" class="request-form__wrapper">
+        <div class="request-form__close">
+          ×
+        </div>
+        <div class="request-form__title">
+          Обратный звонок
+        </div>
+        <form action="/#wpcf7-f136-o1" method="post">
+          <div class="request-form__input">
+            <input
+              data-vv-as="«Имя»"
+              type="text"
+              name="name1"
+              placeholder="Ваше имя"
+              class="input-default"
+            />
+          </div>
+          <div class="request-form__input">
+            <input
+              data-vv-as="«Телефон»"
+              type="text"
+              name="phone"
+              placeholder="+7 (___) ___-__-__"
+              class="input-default"
+            />
+          </div>
+          <div class="request-form__fields">
+            <div class="request-form__col">
+              <div class="request-form__submit">
+                <input type="submit" value="Заказать звонок" class="btn btn_accent" />
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- / modal callback -->
+
+    <script type="text/javascript">
+      jQuery(document).ready(function () {
+        _initMap('contact-map', 53.413089, 82.614508)
+        // Создание экземпляра карты и его привязка к контейнеру с
+        // заданным id ("map").
+        //     var myMap = new ymaps.Map('contact-map', {
+        //     // При инициализации карты обязательно нужно указать
+        //     // её центр и коэффициент масштабирования.
+        //     center: [55.76, 37.64], // Москва
+        //     zoom: 10
+        // }, {
+        //     searchControlProvider: 'yandex#search'
+        // });
+
+        // document.getElementById('destroyButton').onclick = function () {
+        //     // Для уничтожения используется метод destroy.
+        //     myMap.destroy();
+        // };
+      })
+    </script>
+
+    <script src="./mock-data.js"></script>
+    <script src="./main-script.js"></script>
+  </body>
+</html>
